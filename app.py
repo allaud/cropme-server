@@ -20,7 +20,7 @@ def pencil(short_id):
     path = short_to_path(short_id)
     if path is None:
         return ""
-    return render_template('pencil.html')
+    return render_template('pencil.html', **{'path': path})
 
 @app.route('/upload', methods=['POST'])
 def upload():

@@ -8,7 +8,11 @@ $(function(){
         var imgage_b64 = canvas.toDataURL("image/png"),
           raw_b64_image = imgage_b64.replace('data:image/png;base64,', '');
         $.post('/upload', {'image': raw_b64_image}, function(data){
-          console.log(data);
+          if(data === 'error'){
+            alert('Произошла ошибка!');
+            return;
+          }
+          document.location.href = data;
         })      
       }
     });

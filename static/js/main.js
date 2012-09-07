@@ -4,17 +4,19 @@ var pencil_box_params = {
 },
   actions = [];
 
+var image_dimentions = function(src, handler){
+  var width, height;
+  $("<img/>").attr("src", src).load(function() {
+      width = this.width;
+      height = this.height;
+      handler(width, height);
+  });
+};
+
 $(function(){
-  var image_dimentions = function(src, handler){
-    var width, height;
-    $("<img/>").attr("src", src).load(function() {
-        width = this.width;
-        height = this.height;
-        handler(width, height);
-    });
-  };
+  var target_src = $('#patient').attr('src');
   
-  image_dimentions("/static/test.png", function(width, height){
+  image_dimentions(target_src, function(width, height){
     $('#paper').css({
       width: width,
       height: height
@@ -22,7 +24,7 @@ $(function(){
     var paper_offset = $('#paper').offset();
     var paper = Raphael('paper');
 
-    var image = paper.image("/static/test.png", 0, 0, width, height);  
+    var image = paper.image(target_src, 0, 0, width, height);  
     var background = paper.rect(0, 0, width, height);
     background.attr({
       "fill": "#ccc",

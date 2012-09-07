@@ -70,6 +70,14 @@
   </div>
 </div>
 
+<div class="hidden">
+  {% if request.host == 'localhost:5000' %}
+  <img id="patient" src="/static/{{ path }}">
+  {% else %}
+  <img id="patient" src="/{{ path }}">
+  {% endif %}
+</div>
+
 <div class="paper" id="paper"></div>
 <canvas id="canvas"></canvas>
 {% endblock %}
