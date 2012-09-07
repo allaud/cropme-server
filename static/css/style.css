@@ -1,17 +1,13 @@
-@font-face {
-  font-family: 'Kozuka Gothic Pr6N';
-  src: url('/static/fonts/KozGoPr6NExtraLight.otf') format('opentype');
-}
 *{margin: 0;padding: 0;font-family: Arial;}
 #paper{margin:auto;background: #ededed}
 #canvas{display: none;}
 
-.main{text-align:center;}
-.main .name{min-height:130px;border:1pxsolid black; background:url(/static/img/name.png) no-repeat;background-position: 50% 50px; }
-.main .content{min-height:160px;padding-top:350px;background: url(/static/img/mainpic.png) no-repeat; background-position: 50% 0; }
+.main{text-align:center;min-width: 370px;width:100%;}
+.main .name{min-height:105px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
+.main .content{min-height:160px;padding-top:355px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
 .main .content .description{font-weight:100;margin: 15px 0; font-size:18px; }
-.main .content .description p{font-family: 'Kozuka Gothic Pr6N';}
-.btn-download{width:200px; margin: 15px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
+.main .content .description p{font-weight: 100;}
+.btn-download{width:200px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
 .navbar .btn-primary{float: left;margin: 7px 40% 0 -20px;}
 .navbar .nav .colored{border-bottom: 2px solid #000;padding-bottom: 8px;}
