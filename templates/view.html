@@ -10,6 +10,10 @@
 </div>
 
 <div class="content">
+  {% if request.host == 'localhost:5000' %}
   <img src="/static/{{ path }}">
+  {% else %}
+  <img src="/{{ path }}">
+  {% endif %}
 </div>
 {% endblock %}
