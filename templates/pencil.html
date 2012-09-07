@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div style="width: auto; padding: 0 20px;" class="container">
+      <a class="btn btn-primary">
+      Готово
+      </a>
+
+      <ul class="nav">
+        <li class="pencil active"><a><div class="bigicon-pen"></div></a></li>
+        <li class="dropdown">
+          <a href="" data-toggle="dropdown"><div class="bigicon-brush"></div></a>
+
+          <ul class="dropdown-menu width-selector" role="menu" aria-labelledby="dLabel">
+            <li><a tabindex="-1" href="#"><div class="h1px"></div></a></li>
+            <li><a tabindex="-1" href="#"><div class="h2px"></div></a></li>
+            <li><a tabindex="-1" href="#"><div class="h3px"></div></a></li>
+            <li><a tabindex="-1" href="#"><div class="h4px"></div></a></li>
+            <li><a tabindex="-1" href="#"><div class="h5px"></div></a></li>
+            <li><a tabindex="-1" href="#"><div class="h6px"></div></a></li>
+          </ul>          
+        </li>
+        <li class="divider-vertical"></li>
+        <li class="dropdown">
+          <a class="colored" data-toggle="dropdown" href="">
+            <div class="bigicon-flower"></div>
+          </a>
+
+          <ul class="dropdown-menu colorpicker" role="menu" aria-labelledby="dLabel">
+            <li style="background:#fff"></li>
+            <li style="background:#ddd"></li>
+            <li style="background:#aaa"></li>
+            <li style="background:#888"></li>
+            <li style="background:#555"></li>
+            <li style="background:#333"></li>
+            <li style="background:#000"></li>
+
+            <li style="background:#f00"></li>
+            <li style="background:#f11"></li>
+            <li style="background:#f33"></li>
+            <li style="background:#f55"></li>
+            <li style="background:#f88"></li>
+            <li style="background:#faa"></li>
+            <li style="background:#fcc"></li>
+
+            <li style="background:#0f0"></li>
+            <li style="background:#1f1"></li>
+            <li style="background:#3f3"></li>
+            <li style="background:#5f5"></li>
+            <li style="background:#8f8"></li>
+            <li style="background:#afa"></li>
+            <li style="background:#cfc"></li>
+
+            <li style="background:#00f"></li>
+            <li style="background:#11f"></li>
+            <li style="background:#33f"></li>
+            <li style="background:#55f"></li>
+            <li style="background:#88f"></li>
+            <li style="background:#aaf"></li>
+            <li style="background:#ccf"></li>
+
+          </ul>          
+        </li>
+        <li class="revert"><a class="bottom_fix"><div class="bigicon-revert"></div></a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="paper" id="paper"></div>
+<canvas id="canvas"></canvas>
+{% endblock %}

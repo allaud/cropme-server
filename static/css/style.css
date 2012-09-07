@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Kozuka Gothic Pr6N';
+  src: url('/static/fonts/KozGoPr6NExtraLight.otf') format('opentype');
+}
+*{margin: 0;padding: 0;font-family: Arial;}
+#paper{margin:auto;background: #ededed}
+#canvas{display: none;}
+
+.main{text-align:center;}
+.main .name{min-height:130px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 50px; }
+.main .content{min-height:160px;padding-top:350px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
+.main .content .description{font-weight:100;margin: 15px 0; font-size:18px; }
+.main .content .description p{font-family: 'Kozuka Gothic Pr6N';}
+.btn-download{width:200px; margin: 15px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
+
+.navbar .btn-primary{float: left;margin: 7px 40% 0 -20px;}
+.navbar .nav .colored{border-bottom: 2px solid #000;padding-bottom: 8px;}
+.navbar .nav li a{cursor: pointer;}
+.navbar .nav li .bottom_fix{padding-bottom: 9px;}
+.navbar .nav .divider-vertical{height: 45px;}
+.navbar .nav .width-selector li a{padding: 6px 20px;}
+.navbar .nav .width-selector li .h1px{background: #000;height: 1px;}
+.navbar .nav .width-selector li .h2px{background: #000;height: 2px;}
+.navbar .nav .width-selector li .h3px{background: #000;height: 3px;}
+.navbar .nav .width-selector li .h4px{background: #000;height: 4px;}
+.navbar .nav .width-selector li .h5px{background: #000;height: 5px;}
+.navbar .nav .width-selector li .h6px{background: #000;height: 6px;}
+.navbar .nav .colorpicker li{margin: 2px 0 2px 5px;border: 1px solid #000;width: 15px;height: 15px;float: left;cursor: pointer;}
+.navbar .nav .colorpicker li:hover{border-color: #ccc;}
+
+[class^="bigicon-"],
+[class*=" bigicon-"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  *margin-right: .3em;
+  line-height: 24px;
+  vertical-align: text-top;
+}
+.bigicon-pen{background: url('../img/pen.png');}
+.bigicon-brush{background: url('../img/brush.png');width: 25px;}
+.bigicon-flower{background: url('../img/flower.png');width: 19px;}
+.bigicon-revert{background: url('../img/revert.png');width: 24px;height: 25px;}
