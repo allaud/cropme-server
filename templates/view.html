@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/static/css/image.css" />
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <a href="/pencil{{ request.path }}" class="btn btn-inverse"><div class="bigicon-edit"></div></a>
+</div>
+
+<div class="content">
+  <img src="/static/{{ path }}">
+</div>
+{% endblock %}

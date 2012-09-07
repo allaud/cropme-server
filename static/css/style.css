@@ -28,6 +28,9 @@
 .navbar .nav .colorpicker li{margin: 2px 0 2px 5px;border: 1px solid #000;width: 15px;height: 15px;float: left;cursor: pointer;}
 .navbar .nav .colorpicker li:hover{border-color: #ccc;}
 
+.panel{position: absolute;right: 5px;top: 5px;background: #999;padding: 4px;border-radius: 3px;}
+.panel .btn{padding: 3px 2px 4px 5px;}
+
 [class^="bigicon-"],
 [class*=" bigicon-"] {
   display: inline-block;
@@ -41,3 +44,4 @@
 .bigicon-brush{background: url('../img/brush.png');width: 25px;}
 .bigicon-flower{background: url('../img/flower.png');width: 19px;}
 .bigicon-revert{background: url('../img/revert.png');width: 24px;height: 25px;}
+.bigicon-edit{background: url('../img/edit.png');width: 24px;height: 21px;}
