@@ -1,5 +1,5 @@
 var pencil_box_params = {
-  stroke: "#000000",
+  stroke: "#ff0000",
   "stroke-width": 1
 },
   actions = [];

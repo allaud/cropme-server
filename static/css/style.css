@@ -5,12 +5,14 @@
 .main{text-align:center;min-width: 370px;width:100%;}
 .main .name{min-height:105px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
 .main .content{min-height:160px;padding-top:355px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
+.main .content .explain{color: #999;font-size: 13px;}
 .main .content .description{font-weight:100;margin: 15px 0; font-size:18px; }
 .main .content .description p{font-weight: 100;}
+
 .btn-download{width:200px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
-.navbar .btn-primary{float: left;margin: 7px 40% 0 -20px;}
-.navbar .nav .colored{border-bottom: 2px solid #000;padding-bottom: 8px;}
+.navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
+.navbar .nav .colored{border-bottom: 2px solid #f00;padding-bottom: 8px;}
 .navbar .nav li a{cursor: pointer;}
 .navbar .nav li .bottom_fix{padding-bottom: 9px;}
 .navbar .nav .divider-vertical{height: 45px;}

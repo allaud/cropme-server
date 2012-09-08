@@ -71,6 +71,10 @@ var CORE = (function(){
     });
   };
 
+  $(function(){
+    signals.trigger("dom:ready");
+  });
+
   return function(name, imports, module){
     var sandbox = create_sandbox(name, imports, module);
   };
