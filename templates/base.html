@@ -3,18 +3,16 @@
 <head>
     <title>Crop me!</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/raphael.js"></script>
-    <script type="text/javascript" src="/static/js/canvg.js"></script>
-    <script type="text/javascript" src="/static/js/svgfix.js"></script>
-    <script type="text/javascript" src="/static/js/rgbcolor.js"></script>
-    <script type="text/javascript" src="/static/js/main.js"></script>
-    <script type="text/javascript" src="/static/js/controls.js"></script>
-    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
-    <link rel="icon" type="image" href="/static/img/favicon.ico" />
+    <script type="text/javascript" src="/static/js/contrib/underscore.js"></script>
+    <script type="text/javascript" src="/static/js/contrib/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/core.js"></script>
+    {% block js %}{% endblock %}
+
+	<link rel="icon" type="image" href="/static/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-    {% block style %}
-    {% endblock %}
+    {% block style %}{% endblock %}
 </head>
 <body>
 {% block content %}

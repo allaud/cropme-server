@@ -41,7 +41,6 @@ def view(short_id):
         return ""
     return render_template('view.html', **{'path': path})
 
-
 def _write(path, content):
     f = open(path, 'w')
     f.write(content)
