@@ -35,7 +35,9 @@ var CORE = (function(){
     _.each(sandbox, function(elem, key){
       var paths = key.split('.');
       append(sandbox, paths, elem);
-      delete sandbox[key];
+      if(paths.length > 1){
+        delete sandbox[key];
+      }
     });
   };
 

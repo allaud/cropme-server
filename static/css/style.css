@@ -12,6 +12,7 @@
 .btn-download{width:200px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
 .navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
+.navbar .ajax{float: right;background: url('../img/ajax.gif');height: 32px;width: 32px;margin: 5px 32px 0;display: none;}
 .navbar .nav .colored{border-bottom: 2px solid #f00;padding-bottom: 8px;}
 .navbar .nav li a{cursor: pointer;}
 .navbar .nav li .bottom_fix{padding-bottom: 9px;}
