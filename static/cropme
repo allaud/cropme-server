@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+from base64 import b64encode as encode
+import os, sys
+import urllib, urllib2
+
+
+if sys.platform == "darwin":
+    browser = 'open'
+    cmd = 'screencapture -s'
+else:
+    cmd = 'import'
+    browser = 'firefox'
+
+fn = "/tmp/__image.png"
+os.system('%s %s' % (cmd, fn, ))
+
+with open(fn, 'r') as f:
+  image = f.read()
+image_string = encode(image)
+url = 'http://cropme.ru/upload'
+data = {'image': image_string}
+try:
+    data = urllib.urlencode(data)          
+    request = urllib2.Request(url, data)
+    response = urllib2.urlopen(request)
+    resp_text = response.read()
+    if resp_text != 'error':
+        os.system("%s %s" % (browser, resp_text, ))
+except Exception, detail: 
+    print "Error: %s" % detail

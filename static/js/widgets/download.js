@@ -5,7 +5,7 @@ CORE("widgets.download", {
   var explain = {
     '': '',
     'osx': {
-      text: "CropMe.app приложение для OS X, 7 mb",
+      text: "CropMe.app приложение для OS X, 7 mb (zip 3 mb)",
       link: "/downloads/CropMe.zip"
     },
     'win': {
@@ -19,7 +19,7 @@ CORE("widgets.download", {
   }
 
   CORE.bind("dom:ready", function(){
-    var content = $(".content");
+    var content = $(".main");
 
     content.find(".explain").text(explain[os].text);
     content.find(".btn-download").attr("href", explain[os].link);

@@ -1,14 +1,15 @@
 <div class="nav-content"> 
-  <h5>Installing CropMe on Linux</h5>
+  <h5>Установка скрипта CropMe на Linux</h5>
 
-  <p>Шла Саша по шоссе и сосала сушку. Шла Саша по шоссе и сосала сушку.Шла Саша по шоссе и сосала сушку.</p>
-  <pre >cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - </pre>
+  <p>Создаем папку для скриптов в домашней директории</p>
+  <pre >mkdir ~/bin</pre>
 
-  <p>Шла Саша по шоссе и сосала сушку. Шла Саша по шоссе и сосала сушку.Шла Саша по шоссе и сосала сушку. Шла Саша по шоссе и сосала сушку. Шла Саша по шоссе и сосала сушку. Шла Саша по шоссе и сосала сушку.</p>
-  <pre>cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - </pre>
+  <p>Скачиваем скрипт Crop Me</p>
+  <pre>wget http://cropme.ru/static/cropme.txt > ~/bin/cropme</pre>
 
-  <p>Шла Саша по шоссе и сосала сушку. </p>
-  <pre>cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - </pre>
+  <p>Сообщаем системе, что файл исполняемый</p>
+  <pre>chmod +x ~/bin/cropme</pre>
 
-  <p>Хэппи энд</p>
+  <p>Теперь при необходимости запускаем Crop Me из консоли</p>
+  <pre>cropme</pre>
 </div>
