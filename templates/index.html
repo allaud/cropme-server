@@ -6,14 +6,31 @@
 {% endblock %}
 
 {% block content %}
-  <div class="main">
+  <div class="container">
     <div class="name"></div>
-    <div class="content">
+    <div class="main">
       <div class="description">
         <p>Самое удобное и быстрое решение для размещения снимков экрана.</p>
       </div>
       <a href="" class="btn btn-primary btn-download">СКАЧАТЬ</a>
-      <div class="explain"></div>
+      <div class="explain">fdbsb</div>
+      <ul>
+        <li><a href="#install">Инструкция</a></li>
+        <li><a href="#install">Установка</a></li>
+        <li><a href="#install">Обратная связь</a></li>
+      </ul>
     </div>
+    <div class="content">
+    <div id="install" class="menu">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#"><h4>Linux</h4></a>
+        </li>
+        <li><a href="#"><h4>Windows</h4></a></li>
+        <li><a href="#"><h4>Mac</h4></a></li>
+      </ul>
+      {% include 'nav-content.html' %}
+    </div>
+  </div>
   </div>
 {% endblock %}

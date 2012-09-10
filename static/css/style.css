@@ -1,14 +1,21 @@
-*{margin: 0;padding: 0;font-family: Arial;}
+*{margin: 0;padding: 0;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;}
 #paper{margin:auto;background: #ededed}
 #canvas{display: none;}
 
-.main{text-align:center;min-width: 370px;width:100%;}
-.main .name{min-height:105px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
-.main .content{min-height:160px;padding-top:355px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
-.main .content .explain{color: #999;font-size: 13px;}
-.main .content .description{font-weight:100;margin: 15px 0; font-size:18px; }
-.main .content .description p{font-weight: 100;}
-
+.container{text-align:center;min-width: 370px;width:100%;}
+.container .name{min-height:105px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
+.container .main{overflow:hidden; min-height:160px;padding-top:355px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
+.container .main .explain{position:relative;color: #999;font-size: 13px;padding:0 0 10px; margin:0 0 -20px;box-shadow:-4px 9px 11px -3px #000; -moz-box-shadow:-4px 9px 11px -3px #000; -webkit-box-shadow:-4px 9px 11px -3px #000;z-index: 1;}
+.container .main .description{font-weight:100;margin: 15px 0; font-size:18px; }
+.container .main .description p{font-weight: 100;}
+.container .main ul{position: relative;list-style-type: none; padding: 10px;background: url(../img/leather.png); margin: 20px 0; box-shadow:-3px 3px 8px 3px #000; -moz-box-shadow:-3px 3px 8px 3px #000; -webkit-box-shadow:-3px 3px 8px 3px #000; }
+.container .main ul li{display: inline-block; margin: 15px;}
+.container .main ul a{color:#fff;}
+.container .content{margin-top:-20px;padding: 45px 0 20px;background: url(../img/crissXcross.png);}
+.container .content .menu{width:70%; margin: 0 auto;}
+.container .content .menu ul{margin-bottom: 0;}
+.container .content .menu li{width:33%;}
+.container .content .menu .nav-content{ background:#fff;padding:10px 30px; text-align: left; border-left: solid 1px #ddd;border-bottom: solid 1px #ddd;border-right: solid 1px #ddd;  -webkit-border-radius: 0 0 4px 4px;-moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;}
 .btn-download{width:200px; line-height: 45px !important;font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
 .navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
