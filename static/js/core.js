@@ -77,6 +77,10 @@ var CORE = (function(){
     signals.trigger("dom:ready");
   });
 
+  $(window).resize(function() {
+    signals.trigger("window:resize");
+  });
+
   return function(name, imports, module){
     var sandbox = create_sandbox(name, imports, module);
   };

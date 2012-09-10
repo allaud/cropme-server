@@ -16,6 +16,12 @@ CORE("pencil", {
     });
   };
 
+  var paper_offset = {};
+
+  CORE.bind("window:resize", function(){
+    paper_offset = $('#paper').offset();
+  });  
+
   CORE.bind("dom:ready", function(){
     var target_src = $('#patient').attr('src');
     
@@ -24,7 +30,7 @@ CORE("pencil", {
         width: width,
         height: height
       });
-      var paper_offset = $('#paper').offset();
+      paper_offset = $('#paper').offset();
       var paper = Raphael('paper');
 
       var image = paper.image(target_src, 0, 0, width, height);  
