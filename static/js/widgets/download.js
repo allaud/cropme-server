@@ -6,7 +6,7 @@ CORE("widgets.download", {
     '': '',
     'osx': {
       text: "CropMe.app приложение для OS X, 7 mb",
-      link: "/downloads/CropMe.app"
+      link: "/downloads/CropMe.zip"
     },
     'win': {
       text: "cropme-setup.exe установочный файл для Windows, 5 mb",
