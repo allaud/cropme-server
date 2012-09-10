@@ -1,10 +1,10 @@
-*{margin: 0;padding: 0;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;}
+*{margin: 0;padding: 0;font-family: Arial,sans-serif;;}
 #paper{margin:auto;background: #ededed}
 #canvas{display: none;}
 
 .container{text-align:center;min-width: 370px;width:100%;}
-.container .name{min-height:105px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
-.container .main{overflow:hidden; min-height:160px;padding-top:355px;background: url(../img/mainpic.png) no-repeat; background-position: 50% 0; }
+.container .name{min-height:105px;margin:0 0 20px;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 25px; }
+.container .main{overflow:hidden; min-height:100px;padding-top:270px;background: url(../img/logo.png) no-repeat; background-position: 50% 0; }
 .container .main .explain{position:relative;color: #999;font-size: 13px;padding:0 0 10px; margin:0 0 -20px;box-shadow:-4px 9px 11px -3px #000; -moz-box-shadow:-4px 9px 11px -3px #000; -webkit-box-shadow:-4px 9px 11px -3px #000;z-index: 1;}
 .container .main .description{font-weight:100;margin: 15px 0; font-size:18px; }
 .container .main .description p{font-weight: 100;}
