@@ -8,29 +8,44 @@
 {% block content %}
   <div class="container">
     <div class="name"></div>
+    <div class="description">
+      Самое удобное и быстрое решение для размещения снимков экрана.
+    </div>
     <div class="main">
-      <div class="description">
-        <p>Самое удобное и быстрое решение для размещения снимков экрана.</p>
-      </div>
-      <a href="" class="btn btn-primary btn-download">СКАЧАТЬ</a>
-      <div class="explain">fdbsb</div>
+      <a href="" class="btn btn-primary btn-download">
+        СКАЧАТЬ<br /> 
+        <span class="explain"></span>
+      </a>
+    </div>
+    <div class="navbar">
       <ul>
-        <li><a href="#install">Инструкция</a></li>
+        <li><a href="#use">Иcпользование</a></li>
         <li><a href="#install">Установка</a></li>
         <li><a href="#install">Обратная связь</a></li>
       </ul>
     </div>
     <div class="content">
-    <div id="install" class="menu">
-      <ul class="nav nav-tabs">
-        <li class="active">
-          <a href="#"><h4>Linux</h4></a>
-        </li>
-        <li><a href="#"><h4>Windows</h4></a></li>
-        <li><a href="#"><h4>Mac</h4></a></li>
-      </ul>
-      {% include 'nav-content.html' %}
+      <div id="use">
+        <h1>Использование</h1>
+        <div class="steps">
+          <div><img src="static/img/picture.png" alt="" />Выполните шаг 1</div>
+          <img src="static/img/right_arrow.png" alt="" />
+          <div><img src="static/img/edit-black.png" alt="" />Выполните шаг 2</div>
+          <img src="static/img/right_arrow.png" alt=""/>
+          <div><img src="static/img/share.png" alt="" />Выполните шаг 3</div>
+        </div>
+      </div>
+      <div id="install">
+        <h1>Установка</h1>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#"><h4>Linux</h4></a>
+          </li>
+          <li><a href="#"><h4>Windows</h4></a></li>
+          <li><a href="#"><h4>Mac</h4></a></li>
+        </ul>
+        {% include 'nav-content.html' %}
+      </div>
     </div>
-  </div>
   </div>
 {% endblock %}
