@@ -3,6 +3,7 @@
 #canvas{display: none;}
 
 .container{text-align:center;width:100%; overflow: hidden;}
+.container h1{margin: 50px 0 40px;}
 .container .name{min-height:110px;margin:0;border:1pxsolid black; background:url(../img/name.png) no-repeat;background-position: 50% 35px; }
 .container .description{font-weight:100;margin: 5px 0 35px; font-size:16px; }
 .container .description p{font-weight: 100;}
@@ -14,7 +15,7 @@
 .container .content h1{text-align: left;}
 .container .content #use{width:70%; margin: 0 auto;}
 .container .content #use .steps{ border:solid 1px #ddd; background: #fff; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px;}
-.container .content #use .steps div{vertical-align:middle; display: inline-block;width: 30%; height: 100px; border:1px solid black; margin: 5px;}
+.container .content #use .steps div{vertical-align:middle; display: inline-block;width: 30%; margin: 5px;color: #777;font-size: 12px;}
 .container .content #use .steps div img{margin:0 5px;}
 .container .content #use .steps img{display: inline-block;}
 .container .content #install{width:70%; margin: 0 auto;}

@@ -5,11 +5,11 @@ CORE("widgets.download", {
   var explain = {
     '': '',
     'osx': {
-      text: "CropMe.app приложение для OS X, 7 mb (zip 3 mb)",
+      text: "CropMe.app для OS X (3 mb)",
       link: "/downloads/CropMe.zip"
     },
     'win': {
-      text: "cropme-setup.exe установочный файл для Windows, 5 mb",
+      text: "Setup.exe для Windows, 5 mb",
       link: "/downloads/cropme-setup.exe"
     },
     'nix': {
