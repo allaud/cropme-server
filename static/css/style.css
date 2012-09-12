@@ -24,7 +24,7 @@
 .container .content #install .nav-content{ background:#fff;padding:10px 30px; text-align: left; border-left: solid 1px #ddd;border-bottom: solid 1px #ddd;border-right: solid 1px #ddd;  -webkit-border-radius: 0 0 4px 4px;-moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;}
 .btn-download{min-width:220px;margin:40px auto;padding-top:10px; font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
-.navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
+.navbar .btn-primary{float: right;}
 .navbar .ajax{float: right;background: url('../img/ajax.gif');height: 32px;width: 32px;margin: 5px 32px 0;display: none;}
 .navbar .nav .colored{border-bottom: 2px solid #f00;padding-bottom: 8px;}
 .navbar .nav li a{cursor: pointer;}
