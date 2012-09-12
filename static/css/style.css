@@ -11,6 +11,7 @@
 .container .main .explain{color: #bbb;font-size: 11px; font-weight: 100;}
 .container .navbar ul{position: relative;list-style-type: none; padding: 10px;background: url(../img/leather.png); margin: 20px 0; box-shadow:-2px 3px 2px 3px #111; -moz-box-shadow:-2px 3px 2px 3px #111; -webkit-box-shadow:-2px 3px 2px 3px #111; }
 .container .navbar ul li{display: inline-block; margin: 15px;}
+.container .navbar ul li a{color: #ccc;}
 .container .content{margin-top:-20px;padding: 45px 0 20px;background: url(../img/subtlenet2.png);}
 .container .content h1{text-align: left;}
 .container .content #use{width:70%; margin: 0 auto;}
