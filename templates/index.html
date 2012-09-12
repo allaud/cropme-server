@@ -12,6 +12,7 @@
       Самое удобное и быстрое решение для размещения снимков экрана.
     </div>
     <div class="main">
+      <img src="static/img/logo.png" alt=""/><br />
       <a href="" class="btn btn-primary btn-download">
         СКАЧАТЬ<br /> 
         <span class="explain"></span>
@@ -27,12 +28,36 @@
     <div class="content">
       <div id="use">
         <h1>Использование</h1>
-        <div class="steps">
-          <div><img class="img-polaroid" src="static/img/step1.png" alt="" /><b>Шаг 1.</b> Запустите CropMe и выделите изображение, которым хотите поделиться.</div>
+        <div class="steps-wrap">
+          <div class="step">
+            <div class="img-wrap">
+              <img class="img-polaroid" src="static/img/step1.png" alt="" />
+            </div>
+            <div>
+              <b>Шаг 1.</b>
+              Запустите CropMe и выделите изображение, которым хотите поделиться.
+            </div>
+          </div>
           <img src="static/img/right_arrow.png" alt="" />
-          <div><img class="img-polaroid" src="static/img/step2.png" alt="" /><b>Шаг 2.</b> Изображение моментально загружается в интернет и открывается в браузере по сокращенной ссылке.</div>
+          <div class="step">
+            <div class="img-wrap">
+              <img class="img-polaroid" src="static/img/step2.png" alt="" />
+            </div>
+            <div>
+              <b>Шаг 2.</b>
+              Изображение моментально загружается в интернет и открывается в браузере по сокращенной ссылке.
+            </div>
+          </div>
           <img src="static/img/right_arrow.png" alt=""/>
-          <div><img class="img-polaroid" src="static/img/step3.png" alt="" /><b>Шаг 3.</b> Делайте отметки, сохраняйте их на изображении и делитесть с друзьями!</div>
+          <div class="step">
+            <div class="img-wrap">
+              <img class="img-polaroid" src="static/img/step3.png" alt="" />
+            </div>
+            <div>
+              <b>Шаг 3.</b>
+              Делайте отметки, сохраняйте их на изображении и делитесть с друзьями!
+            </div>
+          </div>
         </div>
       </div>
       <div id="install">
@@ -45,6 +70,12 @@
           <li><a href="#macinstall" data-toggle="tab"><h4>Mac</h4></a></li>
         </ul>
         {% include 'nav-content.html' %}
+      </div>
+      <div id="contact">
+          <h1>Контакты</h1>
+          <div class="steps-wrap">
+            <p>Если у Вас возникнут вопросы или пожелания, присылайте их по адресу support@cropme.ru.</p>
+          </div>
       </div>
     </div>
   </div>
