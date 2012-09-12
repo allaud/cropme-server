@@ -26,6 +26,7 @@
 
 .navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
 .navbar .ajax{float: right;background: url('../img/ajax.gif');height: 32px;width: 32px;margin: 5px 32px 0;display: none;}
+.navbar .container{overflow: visible;}
 .navbar .nav .colored{border-bottom: 2px solid #f00;padding-bottom: 8px;}
 .navbar .nav li a{cursor: pointer;}
 .navbar .nav li .bottom_fix{padding-bottom: 9px;}
