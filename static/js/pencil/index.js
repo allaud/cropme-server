@@ -1,71 +1,78 @@
 CORE("pencil", {
-  require: []
+  require: ["utils.dimentions"]
 }, function(CORE){
-  var pencil_params = {
-    stroke: "#ff0000",
-    "stroke-width": 1
-  },
-    actions = [];
 
-  var image_dimentions = function(src, handler){
-    var width, height;
-    $("<img/>").attr("src", src).load(function() {
-        width = this.width;
-        height = this.height;
-        handler(width, height);
-    });
-  };
+  var editor = {
+    actions: [],
+    paths: [],
+    paper_offset: {},
+    params: {
+      stroke: "#ff0000",
+      "stroke-width": 1
+    },
+    init: function(src){
+      this.src = src;
 
-  var paper_offset = {};
-
-  CORE.bind("window:resize", function(){
-    paper_offset = $('#paper').offset();
-  });  
-
-  CORE.bind("dom:ready", function(){
-    var target_src = $('#patient').attr('src');
-    
-    image_dimentions(target_src, function(width, height){
-      $('#paper').css({
-        width: width,
-        height: height
+      var self = this;
+      CORE.utils.dimentions.get(src, function(width, height){
+        self.width = width;
+        self.height = height;
+        self._init_paper();
+        self._add_image();
+        self._add_overlay();
       });
-      paper_offset = $('#paper').offset();
-      var paper = Raphael('paper');
-
-      var image = paper.image(target_src, 0, 0, width, height);  
-      var background = paper.rect(0, 0, width, height);
-      background.attr({
+    },
+    _init_paper: function(){
+      $('#paper').css({
+        width: this.width,
+        height: this.height
+      });
+      this.paper_offset = $('#paper').offset();
+      this.paper = Raphael('paper');
+    },
+    _add_image: function(){
+      this.image = this.paper.image(this.src, 0, 0, this.width, this.height);  
+    },
+    _add_overlay: function(){
+      this.overlay = this.paper.rect(0, 0, this.width, this.height);
+      this.overlay.attr({
         "fill": "#ccc",
         "fill-opacity": 0
       });
+      this._init_events();
+    },
+    _init_events: function(){
+      var self = this;
 
-      var paths = [];
-        
-      background.drag(function(dx, dy, x, y){
-        var x = x - paper_offset.left,
-          y = y - paper_offset.top;
-        if(0 === paths.length){
-          paths.push(["M", x, y]);
-          pencil_box = paper.path(paths);
-          actions.push(pencil_box);
-          pencil_box.attr(pencil_params);
+      CORE.bind("window:resize", function(){
+        self.paper_offset = $('#paper').offset();
+      });  
+
+      this.overlay.drag(function(dx, dy, x, y){
+        var x = x - self.paper_offset.left,
+          y = y - self.paper_offset.top;
+        if(0 === self.paths.length){
+          self.paths.push(["M", x, y]);
+          self.pencil_box = self.paper.path(self.paths);
+          self.actions.push(self.pencil_box);
+          self.pencil_box.attr(self.params);
         } else {
-          paths.push(["L", x, y]);  
+          self.paths.push(["L", x, y]);  
         }
-        pencil_box.attr({path: paths});
+        self.pencil_box.attr({path: self.paths});
       }, function(){
-        paths = [];
+        self.paths = [];
       });
 
-    });
+    }
+  }
 
+  CORE.bind("dom:ready", function(){
+    var target_src = $('#patient').attr('src');
+    editor.init(target_src);
   });
 
-  return {
-    params: pencil_params,
-    actions: actions
-  }
+  return editor;
 });
 
 
