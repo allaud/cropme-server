@@ -1,5 +1,5 @@
 CORE("pencil.controls", {
-  require: ["pencil"]
+  require: ["pencil", "pencil.dem"]
 }, function(CORE){
 
   var controls = {
@@ -23,6 +23,10 @@ CORE("pencil.controls", {
       $(layout).parents('.nav').find('.active').removeClass('active');
       $(layout).parents('li').addClass('active');
     },
+    toggle_dem: function(width, layout){
+      console.log('dem');
+      console.log(CORE.pencil.dem.add());
+    },
     revert: function(){
       var last = CORE.pencil.actions.pop();
       if(last){
@@ -34,7 +38,7 @@ CORE("pencil.controls", {
       var paper = $('#paper');
       var self = this;
 
-      panel.find(".ajax").show();
+      this.panel.find(".ajax").show();
       canvg(canvas, svgfix(paper.html()), {
         renderCallback: function(){
           var imgage_b64 = canvas.toDataURL("image/png"),
@@ -65,6 +69,9 @@ CORE("pencil.controls", {
       });
       this.panel.find('.revert').on('click', function(){
         self.revert();
+      });
+      this.panel.find('.dem').on('click', function(){
+        self.toggle_dem();
       });
       this.panel.find('.btn-primary').on('click', function(){
         self._save();
