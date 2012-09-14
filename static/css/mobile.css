@@ -1,0 +1,45 @@
+html, body{margin: 0;padding: 0;font-family: Arial,sans-serif;}
+#paper{margin:auto;background: #ededed}
+#canvas{display: none;}
+
+.container{text-align:center;width:100%; overflow: hidden;}
+.container .name{min-height:110px;margin:0; background:url(../img/name.png) no-repeat;background-position: 50% 35px; }
+.container .description{font-weight:100;margin: 27px 0 35px; font-size:24px; }
+.container .description p{font-weight: 100;}
+.container .main{position:relative;padding:0 0 10px;}
+.container .main .explain{color: #bbb;font-size: 18px; font-weight: 100;}
+.btn-download{width:90%; margin:50px auto; padding: 20px 0; font-weight:bold; font-size:28px !important;letter-spacing:1px;}
+
+.navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
+.navbar .ajax{float: right;background: url('../img/ajax.gif');height: 32px;width: 32px;margin: 5px 32px 0;display: none;}
+.navbar .nav .colored{border-bottom: 2px solid #f00;padding-bottom: 8px;}
+.navbar .nav li a{cursor: pointer;}
+.navbar .nav li .bottom_fix{padding-bottom: 9px;}
+.navbar .nav .divider-vertical{height: 45px;}
+.navbar .nav .width-selector li a{padding: 6px 20px;}
+.navbar .nav .width-selector li .h1px{background: #000;height: 1px;}
+.navbar .nav .width-selector li .h2px{background: #000;height: 2px;}
+.navbar .nav .width-selector li .h3px{background: #000;height: 3px;}
+.navbar .nav .width-selector li .h4px{background: #000;height: 4px;}
+.navbar .nav .width-selector li .h5px{background: #000;height: 5px;}
+.navbar .nav .width-selector li .h6px{background: #000;height: 6px;}
+.navbar .nav .colorpicker li{margin: 2px 0 2px 5px;border: 1px solid #000;width: 15px;height: 15px;float: left;cursor: pointer;}
+.navbar .nav .colorpicker li:hover{border-color: #ccc;}
+
+.panel{position: absolute;right: 5px;top: 5px;background: #999;padding: 4px;border-radius: 3px;}
+.panel .btn{padding: 3px 2px 4px 5px;}
+
+[class^="bigicon-"],
+[class*=" bigicon-"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  *margin-right: .3em;
+  line-height: 24px;
+  vertical-align: text-top;
+}
+.bigicon-pen{background: url('../img/pen.png');}
+.bigicon-brush{background: url('../img/brush.png');width: 25px;}
+.bigicon-flower{background: url('../img/flower.png');width: 19px;}
+.bigicon-revert{background: url('../img/revert.png');width: 24px;height: 25px;}
+.bigicon-edit{background: url('../img/edit.png');width: 24px;height: 21px;}
