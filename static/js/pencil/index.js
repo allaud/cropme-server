@@ -6,6 +6,7 @@ CORE("pencil", {
     actions: [],
     paths: [],
     paper_offset: {},
+    set: null,
     params: {
       stroke: "#ff0000",
       "stroke-width": 1
@@ -18,6 +19,7 @@ CORE("pencil", {
         self.width = width;
         self.height = height;
         self._init_paper();
+        self._add_bg();
         self._add_image();
         self._add_overlay();
       });
@@ -29,16 +31,26 @@ CORE("pencil", {
       });
       this.paper_offset = $('#paper').offset();
       this.paper = Raphael('paper');
+      this.set = this.paper.set();
     },
     _add_image: function(){
       this.image = this.paper.image(this.src, 0, 0, this.width, this.height);  
+      this.set.push(this.image);
     },
+    _add_bg: function(){
+      this.bg = this.paper.rect(0, 0, this.width, this.height);
+      this.bg.attr({
+        "fill": "#000",
+        "fill-opacity": 1
+      });
+    },    
     _add_overlay: function(){
       this.overlay = this.paper.rect(0, 0, this.width, this.height);
       this.overlay.attr({
         "fill": "#ccc",
         "fill-opacity": 0
       });
+      this.set.push(this.overlay);
       this._init_events();
     },
     _init_events: function(){
