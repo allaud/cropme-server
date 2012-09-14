@@ -3,6 +3,8 @@ body {
   background: url('/static/img/grey.png');
 }
 
+.navbar .container{overflow: visible;}
+
 #paper{
   bottom: 0;
   left: 0;
