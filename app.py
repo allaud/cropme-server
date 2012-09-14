@@ -1,7 +1,7 @@
 from base64 import b64decode as decode
 import urllib, urllib2
 
-from flask import Flask, request, render_template
+from flask import Flask, request, redirect, render_template
 
 from shorten import image_path, path_to_short, short_to_path
 import local
@@ -13,7 +13,13 @@ url_mask = local.url_mask
 
 @app.route('/')
 def index():
+    if "AppleWebKit" in request.environ['HTTP_USER_AGENT']:
+        return redirect("/mobile")
     return render_template('index.html')
+
+@app.route('/mobile')
+def mobile():
+    return render_template('mobile.html')
 
 @app.route('/pencil/<short_id>')
 def pencil(short_id):
