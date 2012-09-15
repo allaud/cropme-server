@@ -48,7 +48,9 @@ CORE("pencil", {
       this.overlay = this.paper.rect(0, 0, this.width, this.height);
       this.overlay.attr({
         "fill": "#ccc",
-        "fill-opacity": 0
+        "fill-opacity": 0,
+        "stroke": "#ffffff",
+        "stroke-width": 1
       });
       this.set.push(this.overlay);
       this._init_events();

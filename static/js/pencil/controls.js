@@ -1,15 +1,16 @@
 CORE("pencil.controls", {
-  require: ["pencil", "pencil.dem"]
+  require: ["pencil", "dem"]
 }, function(CORE){
-
   var controls = {
+    dem_mode: false,
+    radio: [".pencil", ".dropdown"],
     init: function(){
       this.panel = $('.navbar');
       this._init_events();
     },
     set_pencil: function(layout){
       CORE.pencil.params["stroke-width"] = 1;
-      $(layout).parents('.nav').find('.active').removeClass('active');
+      $(layout).parents('.nav').find(this.radio.join(",")).removeClass('active');
       $(layout).addClass('active');
     },
     set_color: function(color, layout){
@@ -20,12 +21,17 @@ CORE("pencil.controls", {
     set_stroke: function(width, layout){
       CORE.pencil.params["stroke-width"] = parseInt(width);
       $(layout).parents('.open').removeClass('open');
-      $(layout).parents('.nav').find('.active').removeClass('active');
+      $(layout).parents('.nav').find(this.radio.join(",")).removeClass('active');
       $(layout).parents('li').addClass('active');
     },
-    toggle_dem: function(width, layout){
-      console.log('dem');
-      console.log(CORE.pencil.dem.add());
+    toggle_dem: function(layout){
+      $(layout).toggleClass("active");
+      if(!this.dem_mode){
+        CORE.dem.add();
+      } else {
+        CORE.dem.remove();
+      };
+      this.dem_mode = !this.dem_mode;
     },
     revert: function(){
       var last = CORE.pencil.actions.pop();
@@ -71,7 +77,7 @@ CORE("pencil.controls", {
         self.revert();
       });
       this.panel.find('.dem').on('click', function(){
-        self.toggle_dem();
+        self.toggle_dem(this);
       });
       this.panel.find('.btn-primary').on('click', function(){
         self._save();
