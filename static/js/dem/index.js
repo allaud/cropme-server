@@ -17,11 +17,13 @@ CORE("dem", {
         y: "same"
       });
       CORE.pencil.overlay.transform("...s1.05,1.05");
+      CORE.trigger("dem:switch");
     },
     remove: function(){
       var size = this._get_dimentions();
       this._resize_paper(size);
       CORE.pencil.set.transform("");
+      CORE.trigger("dem:switch");
     },
     _text: function(){
       var image = CORE.pencil.set.getBBox();

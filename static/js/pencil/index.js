@@ -60,14 +60,19 @@ CORE("pencil", {
 
       CORE.bind("window:resize", function(){
         self.paper_offset = $('#paper').offset();
-      });  
+      });
+
+      CORE.bind("dem:switch", function(){
+        self.paper_offset = $('#paper').offset();
+      });
 
       this.overlay.drag(function(dx, dy, x, y){
-        var x = x - self.paper_offset.left,
-          y = y - self.paper_offset.top;
+        x = x - self.paper_offset.left;
+        y = y - self.paper_offset.top;
         if(0 === self.paths.length){
           self.paths.push(["M", x, y]);
           self.pencil_box = self.paper.path(self.paths);
+          self.set.push(self.pencil_box);
           self.actions.push(self.pencil_box);
           self.pencil_box.attr(self.params);
         } else {
@@ -79,7 +84,7 @@ CORE("pencil", {
       });
 
     }
-  }
+  };
 
   CORE.bind("dom:ready", function(){
     var target_src = $('#patient').attr('src');
