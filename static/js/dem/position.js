@@ -6,8 +6,8 @@ CORE("dem.position", {
       var elem_box = elem.getBBox();
       wrapper = wrapper.getBBox();
       var shift = {
-        x: parseInt((wrapper.width - elem_box.width) / 2),
-        y: parseInt(((wrapper.height - elem_box.height)) / 2),
+        x: parseInt((wrapper.width - elem_box.width) / 2) + wrapper.x,
+        y: parseInt(((wrapper.height - elem_box.height)) / 2) + wrapper.y,
         command: "...T"
       };
       shift = _.extend({}, shift, options || {});

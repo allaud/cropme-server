@@ -32,6 +32,7 @@ CORE("pencil", {
       this.paper_offset = $('#paper').offset();
       this.paper = Raphael('paper');
       this.set = this.paper.set();
+      CORE.trigger("paper:ready");
     },
     _add_image: function(){
       this.image = this.paper.image(this.src, 0, 0, this.width, this.height);  

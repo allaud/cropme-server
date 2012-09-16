@@ -1,5 +1,5 @@
 CORE("pencil.controls", {
-  require: ["pencil", "dem"]
+  require: ["pencil", "dem", "lynch"]
 }, function(CORE){
   var controls = {
     dem_mode: false,
@@ -32,6 +32,10 @@ CORE("pencil.controls", {
         CORE.dem.remove();
       };
       this.dem_mode = !this.dem_mode;
+    },
+    toggle_lynch: function(layout, event){
+      CORE.lynch.precreate(event);
+      event.stopPropagation();
     },
     revert: function(){
       var last = CORE.pencil.actions.pop();
@@ -78,6 +82,9 @@ CORE("pencil.controls", {
       });
       this.panel.find('.dem').on('click', function(){
         self.toggle_dem(this);
+      });
+      this.panel.find('.lynch').on('click', function(event){
+        self.toggle_lynch(this, event);
       });
       this.panel.find('.btn-primary').on('click', function(){
         self._save();
