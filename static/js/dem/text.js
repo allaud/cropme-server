@@ -36,15 +36,19 @@ CORE("dem.text", {
         overlay.textarea.focus().select();
         overlay.textarea.on("keyup", function(){
           var text = overlay.textarea.val();
-          text_block.attr("text", text);
+          text_block.attr("text", text + ".");
           self._position();
           overlay.textarea.css(self._get_textarea_attrs());
         }).on("blur", function(){
-          if(!text_block.attr("text")){
+            var text = overlay.textarea.val();
+            text_block.attr("text", text);
+            if(!text_block.attr("text")){
             text_block.attr("text", self.options.text);
-          }
-          overlay.textarea.remove();
+            }
+            overlay.textarea.remove();
+            overlay.overlay.remove();
         });
+
       });      
     },
     _position: function(){
@@ -56,10 +60,20 @@ CORE("dem.text", {
       var textarea_attrs = this._get_textarea_attrs();
       var attrs = _.extend({}, font_attrs, textarea_attrs);
 
+      var overlay = $("<div></div>");
+      overlay.css({
+        "top": 0,
+        "position": "absolute",
+        "height": "100%",
+        "width": "100%"
+      });
+      overlay.appendTo("body");
+
       var textarea = $("<textarea></textarea>");
       textarea.css(attrs).text(edit_text).appendTo("body");
 
       return {
+        overlay: overlay,
         textarea: textarea
       };
     },

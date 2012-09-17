@@ -4,8 +4,8 @@ CORE("lynch", {
 
   var lynch = {
     options: {
-      height: "50px",
-      width: "150px",
+      height: "30px",
+      width: "100px",
       opacity: "0.8",
       background: "#F7F4DD",
       position: "absolute"
