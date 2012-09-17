@@ -1,6 +1,4 @@
-CORE("widgets.download", {
-  require: ["utils.os"]
-}, function(CORE){
+M("widgets.download", function(CORE){
   var os = CORE.utils.os.name();
   var explain = {
     '': '',
@@ -24,4 +22,6 @@ CORE("widgets.download", {
     content.find(".explain").text(explain[os].text);
     content.find(".btn-download").attr("href", explain[os].link);
   });
+}, {
+  require: ["utils.os"]
 });

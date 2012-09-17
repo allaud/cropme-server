@@ -1,6 +1,4 @@
-CORE("utils.os", {
-  require: []
-}, function(CORE){
+M("utils.os", function(CORE){
   var os = "unknown";
 
   var name = function(){
