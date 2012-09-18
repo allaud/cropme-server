@@ -7,6 +7,7 @@ CORE("lynch", {
       height: "30px",
       width: "100px",
       opacity: "0.8",
+      "font-size": "12px",
       background: "#F7F4DD",
       position: "absolute"
     },

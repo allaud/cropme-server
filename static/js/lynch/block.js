@@ -87,7 +87,7 @@ CORE("lynch.block", {
       var start = function () {
         this.odx = 0;
         this.ody = 0;
-        this.animate({"fill-opacity": 0.8}, 500);
+        self.set.animate({"fill-opacity": 0.8}, 500);
       },
       move = function (dx, dy) {
         var x = dx - this.odx;
@@ -97,7 +97,7 @@ CORE("lynch.block", {
         this.ody = dy;
       },
       up = function () {
-          this.animate({"fill-opacity": 1}, 500);
+          self.set.animate({"fill-opacity": 1}, 500);
       };
       this.set.drag(move, start, up);
     },
@@ -140,6 +140,7 @@ CORE("lynch.block", {
     _init_tentacle_events: function(tentacle, glow){
       var self = this;
       tentacle.hover(function(){
+        self.tentacle.hide();
         this.attr({
           fill: "#f00"
         });
@@ -156,6 +157,10 @@ CORE("lynch.block", {
     },
     _init_events: function(){
       var self = this;
+      this.rect.hover(function(){
+        self.tentacle.hide();
+      });
+
       CORE.pencil.overlay.mousemove(function(event){
         var offset = $("#paper").offset();
         var x = event.clientX - offset.left;
