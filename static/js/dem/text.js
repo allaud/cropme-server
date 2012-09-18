@@ -47,10 +47,14 @@ CORE("dem.text", {
             }
             overlay.textarea.remove();
             overlay.overlay.remove();
+            self._position();
         });
 
       });      
     },
+    _blur: function(){
+      return this.options.blur();
+    },    
     _position: function(){
       return this.options.position(this.text);
     },
