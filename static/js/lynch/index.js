@@ -14,7 +14,7 @@ CORE("lynch", {
       this._init_events();
     },
     precreate: function(event){
-      this.contour = $("<div>Двойной клик</div>");
+      this.contour = $("<div>Изменить текст</div>");
       this.contour.css(this.options);
       this.contour.appendTo("body");
       this.tracking = true;

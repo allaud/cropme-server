@@ -60,6 +60,13 @@ CORE("dem", {
       var resized = this._resize(size.width, size.height, image_width, image_height);
       CORE.pencil.set.transform("s" + resized.scale + "," + resized.scale + ",0,0");
     },
+    _paper_extender: function(resized){
+      var coef = resized.width / resized.height;
+      if(coef>1){
+        return parseInt(15 * coef);
+      };
+      return 0;
+    },
     _resize_paper: function(resized){
       if(!resized){
         var size = this._get_dimentions();
@@ -67,6 +74,7 @@ CORE("dem", {
         var paper_height = CORE.dem.options.paper.height;
         var resized = this._resize(size.width, size.height, paper_width, paper_height);
 
+        resized.height += this._paper_extender(resized);
         resized.height += CORE.dem.options.text_height;
       }
       $("#paper").width(resized.width);
