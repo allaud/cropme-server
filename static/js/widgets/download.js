@@ -6,22 +6,26 @@ CORE("widgets.download", {
     '': '',
     'osx': {
       text: "CropMe.app для OS X (3 mb)",
-      link: "/downloads/CropMe.zip"
+      link: "/downloads/CropMe.zip",
+      selector: "[href='#macinstall']"
     },
     'win': {
       text: "Setup.exe для Windows, 5 mb",
-      link: "/downloads/cropme-setup.exe"
+      link: "/downloads/cropme-setup.exe",
+      selector: "[href='#windowsinstall']"
     },
     'nix': {
       text: "Bash-скрипт для Linux, 1 kb",
-      link: "#install"
+      link: "#install",
+      selector: "[href='#linuxinstall']"
     }
-  }
+  };
 
   CORE.bind("dom:ready", function(){
     var content = $(".main");
 
     content.find(".explain").text(explain[os].text);
     content.find(".btn-download").attr("href", explain[os].link);
+    $(explain[os].selector).tab('show');
   });
 });
