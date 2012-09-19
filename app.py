@@ -13,7 +13,7 @@ url_mask = local.url_mask
 
 @app.route('/')
 def index():
-    if "AppleWebKit" in request.environ['HTTP_USER_AGENT']:
+    if "AppleWebKit" in request.environ['HTTP_USER_AGENT'] and "Chrome" not in request.environ['HTTP_USER_AGENT']:
         return redirect("/mobile")
     return render_template('index.html')
 
