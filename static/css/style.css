@@ -21,10 +21,11 @@
 .container .content #use .steps-wrap .step div:first-child{height: 70%;}
 .container .content #use .steps-wrap .step div:last-child{height: 30%;}
 .container .content #use .steps-wrap .img-polaroid{margin: 0;}
-.container .content #use .steps-wrap .arrow{display: inline-block;height: 70%;}
+.container .content #use .steps-wrap .arrow{display: inline-block;}
+.container .content #use .steps-wrap .arrow img{margin: -100px 0 0 10px;}
 .container .content #install ul{margin-bottom: 0;}
-.container .content #install li{width:33%;}dd
-.container .content #install .nav-content{ margin-top: 0;background:#fff;padding:10px 30px; text-align: left; border-left: solid 1px #ddd;border-bottom: solid 1px #ddd;border-right: solid 1px #ddd;  -webkit-border-radius: 0 0 4px 4px;-moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;}
+.container .content #install li{width:33%;}
+.container .content #install .nav-content{margin-top: 0;background:#fff;padding:10px 30px; text-align: left; border-left: solid 1px #ddd;border-bottom: solid 1px #ddd;border-right: solid 1px #ddd;  -webkit-border-radius: 0 0 4px 4px;-moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;}
 .container .content #install .nav-content ul{width: 100%;}
 .container .content #install .nav-content ul .img-polaroid{margin: 0;}
 .container .content #install .nav-content ul li{list-style-type: none; width: 46%;margin: 1.8%; display: inline-block;}

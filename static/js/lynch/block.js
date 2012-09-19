@@ -70,7 +70,17 @@ CORE("lynch.block", {
         "height": this.options.rect.height + dy
       });
       this.glow.remove();
-      this._glow();
+      console.log("glow");
+      //console.log(this.text.text);
+      //console.log(this.text.text.getBBox().width, this.text.text.getBBox().height);
+      console.log(this.text.text.getBBox().width, this.text.text.getBBox().height);
+      console.log(this.rect.getBBox().width, this.rect.getBBox().height);
+
+      var self = this;
+      _.delay(function(){
+        self._glow();
+      }, 10);
+      
     },
     _glow: function(){
       this.glow = this.rect.glow(this.options.glow);

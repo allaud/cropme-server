@@ -15,17 +15,17 @@
     </a>
     <ul class="dropdown-menu pull-right social-share" role="menu" aria-labelledby="dLabel">
       <li>
-        <a href="http://vkontakte.ru/share.php?url={{ request.host }}{{ request.path }}" class="btn btn-inverse">
+        <a href="http://vkontakte.ru/share.php?url=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
            <div class="bigicon-vk"></div>
         </a>
       </li>
       <li>
-        <a href="http://twitter.com/share?text={{ request.host }}{{ request.path }}" class="btn btn-inverse">
+        <a href="http://twitter.com/share?text=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
            <div class="bigicon-twi"></div>
         </a>
       </li>
       <li>
-        <a href="http://www.facebook.com/sharer.php?u={{ request.host }}{{ request.path }}" class="btn btn-inverse">
+        <a href="http://www.facebook.com/sharer.php?u=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
            <div class="bigicon-fb"></div>
         </a>
       </li>

@@ -43,7 +43,7 @@ CORE("dem.text", {
             var text = overlay.textarea.val();
             text_block.attr("text", text);
             if(!text_block.attr("text")){
-            text_block.attr("text", self.options.text);
+              text_block.attr("text", self.options.text);
             }
             overlay.textarea.remove();
             overlay.overlay.remove();
