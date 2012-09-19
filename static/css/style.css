@@ -12,22 +12,23 @@
 .container .navbar ul{position: relative;list-style-type: none; padding: 10px;background: url(../img/leather.png); margin: 20px 0; box-shadow:-2px 3px 2px 3px #111; -moz-box-shadow:-2px 3px 2px 3px #111; -webkit-box-shadow:-2px 3px 2px 3px #111; }
 .container .navbar ul li{display: inline-block; margin: 15px;}
 .container .navbar ul li a{color: #ccc;}
-.container .content{margin-top:-20px;padding: 1px 0 20px;background: url(../img/subtlenet2.png);}
+.container .content{margin-top:-20px;padding: 1px 0 300px;background: url(../img/subtlenet2.png);}
 .container .content h1{text-align: left;}
 .container .content #use, #contact, #install{width:70%; margin: 0 auto;}
 .container .content .steps-wrap{ padding: 15px 15px 10px; border:solid 1px #ddd; background: #fff; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px;}
-.container .content #use .steps-wrap ul {vertical-align:middle;display: inline-block; width: 30%; margin: 5px;color: #777;font-size: 12px;}
-.container .content #use .steps-wrap ul li{list-style-type: none;min-height:60px;margin:15px 0;width: 100%;}
-.container .content #use .steps-wrap img{display: inline-block; margin-top: -10%}
+.container .content #use .steps-wrap .step {min-height:400px;width: 28%; margin: 5px; vertical-align:middle;display: inline-block; color: #777;font-size: 12px;}
+.container .content #use .steps-wrap .step div{margin:15px 0;width: 100%;}
+.container .content #use .steps-wrap .step div:first-child{height: 70%;}
+.container .content #use .steps-wrap .step div:last-child{height: 30%;}
 .container .content #use .steps-wrap .img-polaroid{margin: 0;}
-.container .content #use .steps-wrap ul .img-wrap{width: 100%;}
+.container .content #use .steps-wrap .arrow{display: inline-block;height: 70%;}
 .container .content #install ul{margin-bottom: 0;}
-.container .content #install li{width:33%;}
+.container .content #install li{width:33%;}dd
 .container .content #install .nav-content{ margin-top: 0;background:#fff;padding:10px 30px; text-align: left; border-left: solid 1px #ddd;border-bottom: solid 1px #ddd;border-right: solid 1px #ddd;  -webkit-border-radius: 0 0 4px 4px;-moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;}
 .container .content #install .nav-content ul{width: 100%;}
 .container .content #install .nav-content ul .img-polaroid{margin: 0;}
 .container .content #install .nav-content ul li{list-style-type: none; width: 46%;margin: 1.8%; display: inline-block;}
-.container .content #install #macinstall li:first-child {text-align: center;}
+.container .content #install #windowsinstall li:first-child, #macinstall li:first-child {text-align: center;}
 .container .content #contact .steps-wrap{text-align: left;}
 .btn-download{min-width:220px;margin:40px auto;padding-top:10px; font-weight:bold; font-size:24px !important;letter-spacing:1px;}
 
@@ -76,3 +77,25 @@
 .bigicon-fb{background: url('../img/facebook.png');width: 24px;height: 24px;}
 .bigicon-dem{background: url('../img/dem.png');width: 11px;height: 24px;}
 .bigicon-lynch{background: url('../img/comments.png');width: 24px;height: 23px;}
+
+
+.child, .helper {
+        display: -moz-inline-block;
+        display: inline-block;
+        vertical-align: middle;
+}
+                
+.child {
+        width: 50%;
+}
+
+.helper {
+        width: 0;
+        height: 100%;
+}
+        
+<!--[if lte IE 7]>
+.child, .helper {
+        zoom: 1;
+        display: inline;
+}
