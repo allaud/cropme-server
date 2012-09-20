@@ -1,5 +1,6 @@
 from base64 import b64decode as decode
 import urllib, urllib2
+import Image
 
 from flask import Flask, request, redirect, render_template
 
@@ -29,16 +30,27 @@ def pencil(short_id):
     return render_template('pencil.html', **{'path': path})
 
 @app.route('/upload', methods=['POST'])
-def upload():
+def upload(content=None):
+    if request.form.get('image', None) is None:
+        return "error"
     image = request.form.get('image', None)
-    if image is not None:
-        raw_image = decode(image)
-        path = image_path(raw_image, local.pref_dir)
-        short_id = path_to_short(path)
-        _write('%s/%s' % (dest_dir, path, ), raw_image)
+    raw_image = decode(image)
+    path = image_path(raw_image, local.pref_dir)
+    short_id = path_to_short(path)
+    _write('%s/%s' % (dest_dir, path, ), raw_image)
 
-        return url_mask % short_id
-    return 'error'
+    return url_mask % short_id
+
+
+@app.route('/manualupload', methods=['POST'])
+def manualupload():
+    image = request.files.get('image', None)
+    im = Image.open(image)
+    path = image_path(im.tostring(), local.pref_dir)
+    short_id = path_to_short(path)
+    im.save('%s/%s' % (dest_dir, path, ), "PNG")
+    return redirect(url_mask % short_id)
+
 
 @app.route('/<short_id>')
 def view(short_id):

@@ -1,8 +1,7 @@
 {% extends "base-mobile.html" %}
 
 {% block js %}
-<script type="text/javascript" src="/static/js/utils/os.js"></script>
-<script type="text/javascript" src="/static/js/widgets/download.js"></script>
+<script type="text/javascript" src="/static/js/widgets/mobile.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -11,11 +10,20 @@
     <div class="description">
       Самое удобное и быстрое решение для размещения снимков экрана.
     </div>
-    <div class="main">
-      <img src="static/img/logo.png" alt=""/><br />
-      <a href="" class="btn btn-primary btn-download">
-        СКАЧАТЬ<br /> 
-      </a>
+    <div class="main" method="post">
+      <img src="/static/img/logo.png" alt=""/><br />
+      <form id="upload" enctype="multipart/form-data" method="POST" action="/manualupload">
+
+      <div class="btn btn-primary btn-download" style="overflow: hidden;font-size:30px;">
+        ЗАГРУЗИТЬ<br /> 
+        <input type="file" name="image" id="file" size="1" style="margin-top: -50px; margin-left:-410px; -moz-opacity: 0; filter: alpha(opacity=0); opacity: 0; font-size: 150px; height: 100px;">
+
+      </div>
+
+    </div>
+
+
+      </form>
     </div>
 </div>
 {% endblock %}
