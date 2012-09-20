@@ -50,7 +50,7 @@
 .navbar .nav .colorpicker li{margin: 2px 0 2px 5px;border: 1px solid #000;width: 15px;height: 15px;float: left;cursor: pointer;}
 .navbar .nav .colorpicker li:hover{border-color: #ccc;}
 
-.panel{position: absolute;right: 5px;top: 5px;background: #999;padding: 4px;border-radius: 3px;}
+.panel{position: fixed;z-index:1;right: 5px;top: 5px;background: #999;padding: 4px;border-radius: 3px;}
 .panel .btn{padding: 3px 2px 4px 5px; display: block; margin: 3px 0 0 0;}
 .panel .btn:first-child{margin: 0;}
 .panel .social-share{border: none;padding:4px; margin: -41px 39px; min-width: 113px; border-radius: 3px 0 0 3px;background: none repeat scroll 0 0 #999999;}
