@@ -16,7 +16,7 @@ CORE("widgets.download", {
     },
     'nix': {
       text: "Bash-скрипт для Linux, 1 kb",
-      link: "#install",
+      link: "#linuxinstall",
       selector: "[href='#linuxinstall']"
     }
   };
