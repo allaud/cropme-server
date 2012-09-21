@@ -14,7 +14,8 @@ var CORE = (function(){
         return;
       }
       _.each(events[name], function(handler){
-        handler.apply(null, params);
+        params = params || [];
+        Function.call.apply(handler, params);
       });
     }
   };
