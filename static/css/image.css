@@ -1,4 +1,4 @@
-@media not print {
+
   body {
     margin: 0;
     background: url('/static/img/leather.jpg');
@@ -14,10 +14,6 @@
     left: 0;
     border: 1px solid #fff;
   }
-}
-
-@media print {
   img {
     display: block;
   }
-}
