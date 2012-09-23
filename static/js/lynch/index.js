@@ -44,7 +44,7 @@ CORE("lynch", {
         if(self.tracking){
           self.tracking = false;
           self.contour.remove();
-          CORE.trigger("block:new", [event.pageX, event.pageY]);
+          CORE.trigger("block:new", [null, event.pageX, event.pageY]);
         }
       });
     }

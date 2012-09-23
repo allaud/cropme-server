@@ -225,6 +225,7 @@ CORE("lynch.block", {
         x >= offset.left && x <= offset.left + box.width){
       x = x - offset.left;
       y = y - offset.top;
+
       var block = new Block(x, y);
     }
   });
