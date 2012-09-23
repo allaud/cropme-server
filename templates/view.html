@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block content %}
+
+<div class="alert alert-error">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+    К сожалению, ваш браузер имеет ограниченную поддержку. У вас отключены некоторые функции, в том числе функция сохранения. Используйте браузер Chrome, Firefox, Safari или Opera.
+</div>
+
 <div class="panel">
   <a href="/pencil{{ request.path }}" class="btn btn-inverse">
     <div class="bigicon-edit"></div>

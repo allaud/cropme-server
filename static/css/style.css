@@ -58,6 +58,31 @@
 .panel .social-share li .btn{height:24px;}
 .panel .social-share li .bigicon-vk, .bigicon-twi, .bigicon-fb{margin: -1px 2px 2px 0;}
 
+.alert {
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px 4px 4px 4px;
+    color: #C09853;
+    width: 70%;
+    margin: 65px 15% 0;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: absolute;
+    z-index: 1;
+}
+.alert-error {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+
+.alert .close {
+    line-height: 20px;
+    position: relative;
+    right: -21px;
+    top: -2px;
+}
+
 [class^="bigicon-"],
 [class*=" bigicon-"] {
   display: inline-block;
@@ -79,24 +104,3 @@
 .bigicon-dem{background: url('../img/pencil/dem.png');width: 11px;height: 24px;}
 .bigicon-lynch{background: url('../img/pencil/comments.png');width: 24px;height: 23px;}
 
-
-.child, .helper {
-        display: -moz-inline-block;
-        display: inline-block;
-        vertical-align: middle;
-}
-                
-.child {
-        width: 50%;
-}
-
-.helper {
-        width: 0;
-        height: 100%;
-}
-        
-<!--[if lte IE 7]>
-.child, .helper {
-        zoom: 1;
-        display: inline;
-}
