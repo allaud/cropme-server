@@ -17,3 +17,14 @@
   img {
     display: block;
   }
+  .about-link{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .about-link:hover{
+    text-decoration: underline;
+    color: #fff;
+  }

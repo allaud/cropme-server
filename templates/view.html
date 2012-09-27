@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block style %}
-<link rel="stylesheet" type="text/css" href="/static/css/image.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/image.css?v=2" />
 {% endblock %}
 
 {% block js %}
@@ -52,6 +52,8 @@
   <img src="/{{ path }}">
   {% endif %}
 </div>
+
+<a class="about-link" href="/#use">Что такое Crop Me?</a>
 {% endblock %}
 
 
