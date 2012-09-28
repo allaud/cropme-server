@@ -2,6 +2,7 @@
 
 {% block style %}
 <link rel="stylesheet" type="text/css" href="/static/css/image.css?v=2" />
+<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="/static/css/mobile.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block js %}
@@ -9,11 +10,12 @@
 {% endblock %}
 
 {% block content %}
-
+<!--
 <div class="alert alert-error">
   <button type="button" class="close" data-dismiss="alert">×</button>
     К сожалению, ваш браузер имеет ограниченную поддержку. У вас отключены некоторые функции, в том числе функция сохранения. Используйте браузер Chrome, Firefox, Safari или Opera.
 </div>
+-->
 
 <div class="panel">
   <a href="/pencil{{ request.path }}" class="btn btn-inverse">
@@ -46,7 +48,7 @@
 
 
 <div class="content">
-  {% if request.host == 'localhost:5000' or request.host == '192.168.1.115:5000' %}
+  {% if request.host == 'localhost:5000' or request.host == '192.168.1.6:5000' %}
   <img src="/static/{{ path }}">
   {% else %}
   <img src="/{{ path }}">

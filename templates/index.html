@@ -3,9 +3,11 @@
 {% block js %}
 <script type="text/javascript" src="/static/js/utils/os.js"></script>
 <script type="text/javascript" src="/static/js/widgets/download.js"></script>
+<script type="text/javascript" src="http://vk.com/js/api/share.js?11" charset="windows-1251"></script>
 {% endblock %}
 
 {% block content %}
+
   <div class="container">
     <div class="name"></div>
     <div class="description">
@@ -59,7 +61,7 @@
             </div>
             <div>
               <b>Шаг 3.</b>
-              Делайте отметки, сохраняйте их на изображении и делитесть с друзьями!
+              Добавляйте отметки и комментарии на изображение, делайте демотиваторы, сохраняйте и делитесь с друзьями!
             </div>
           </div>
         </div>
@@ -80,6 +82,20 @@
           <div class="steps-wrap">
             <p>Если у Вас возникнут вопросы или пожелания, присылайте их по адресу <img src="/static/img/mail.png" alt="" /></p>
           </div>
+      </div>
+      <div id="share">
+        <h1>Рассказать о нас</h1>
+        <div class="steps-wrap">
+          <div class="share-to"><script type="text/javascript" src="/static/js/share/vk.js"></script></div>
+          <div class="share-to">
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script type="text/javascript" src="/static/js/share/twi.js"></script>
+          </div>
+          <div class="share-to">
+            <script type="text/javascript" src="/static/js/share/fb.js"></script>
+
+            <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+        </div>
       </div>
     </div>
   </div>

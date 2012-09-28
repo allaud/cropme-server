@@ -1,0 +1,1 @@
+document.write(VK.Share.button(false,{type: "round", text: "Поделиться"}));

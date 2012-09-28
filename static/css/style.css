@@ -12,9 +12,9 @@
 .container .navbar ul{position: relative;list-style-type: none; padding: 10px;background: url(/static/img/leather.png); margin: 20px 0; box-shadow:-2px 3px 2px 3px #111; -moz-box-shadow:-2px 3px 2px 3px #111; -webkit-box-shadow:-2px 3px 2px 3px #111; }
 .container .navbar ul li{display: inline-block; margin: 15px;}
 .container .navbar ul li a{color: #ccc;}
-.container .content{margin-top:-20px;padding: 1px 0 300px;background: url(/static/img/subtlenet2.png);}
+.container .content{margin-top:-20px;padding: 1px 0 100px;background: url(/static/img/subtlenet2.png);}
 .container .content h1{text-align: left;}
-.container .content #use, #contact, #install{width:70%; margin: 0 auto;}
+.container .content #use, #contact, #install, #share{width:70%; margin: 0 auto;}
 .container .content .steps-wrap{ padding: 15px 15px 10px; border:solid 1px #ddd; background: #fff; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px;}
 .container .content #use .steps-wrap .step {min-height:400px;width: 28%; margin: 5px; vertical-align:middle;display: inline-block; color: #777;font-size: 12px;}
 .container .content #use .steps-wrap .step div{margin:15px 0;width: 100%;}
@@ -31,7 +31,11 @@
 .container .content #install .nav-content ul li{list-style-type: none; width: 46%;margin: 1.8%; display: inline-block;}
 .container .content #install #windowsinstall li:first-child, #macinstall li:first-child {text-align: center;}
 .container .content #contact .steps-wrap{text-align: left;}
+.container .content #share .steps-wrap{margin: 0; padding: 20px 40px 40px;}
+.container .content #share .steps-wrap .share-to{float:left;padding: 0;}
+.container .content #share .steps-wrap .share-to:first-child{margin-right: 50px;}
 .btn-download{min-width:220px;margin:40px auto;padding-top:10px; font-weight:bold; font-size:24px !important;letter-spacing:1px;}
+
 
 .navbar .btn-primary{float: right;margin: 7px -25px 0 -20px;}
 .navbar .ajax{float: right;background: url('../img/ajax.gif');height: 32px;width: 32px;margin: 5px 32px 0;display: none;}
