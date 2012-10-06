@@ -7,7 +7,10 @@ CORE("lynch.block", {
     this.options = _.extend({}, this._default_options, options || {});
     this.tentacle = CORE.pencil.paper.path("M0,0");
     this.rect = CORE.pencil.paper.rect(x, y, this.width, this.height);
+    this.back_rect = CORE.pencil.paper.rect(x, y, this.width, this.height);
+
     this.rect.attr(this.options.rect);
+    this.back_rect.attr(this.options.rect);
 
     this.text = CORE.dem.text.create(CORE.pencil.paper, {
       text: "Изменить текст",
@@ -69,12 +72,12 @@ CORE("lynch.block", {
         "width": this.options.rect.width + dx,
         "height": this.options.rect.height + dy
       });
+      this.back_rect.attr({
+        "width": this.options.rect.width + dx,
+        "height": this.options.rect.height + dy
+      });
+
       this.glow.remove();
-      console.log("glow");
-      //console.log(this.text.text);
-      //console.log(this.text.text.getBBox().width, this.text.text.getBBox().height);
-      console.log(this.text.text.getBBox().width, this.text.text.getBBox().height);
-      console.log(this.rect.getBBox().width, this.rect.getBBox().height);
 
       var self = this;
       _.delay(function(){
@@ -83,12 +86,13 @@ CORE("lynch.block", {
       
     },
     _glow: function(){
-      this.glow = this.rect.glow(this.options.glow);
+      this.glow = this.back_rect.glow(this.options.glow);
       this.set.push(this.glow); 
     },
     _group: function(){
       this.set = CORE.pencil.paper.set();
       this.set.push(this.rect);
+      this.set.push(this.back_rect);
       this.set.push(this.text.text);
       this._glow();
     },

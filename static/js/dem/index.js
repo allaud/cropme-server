@@ -27,7 +27,7 @@ CORE("dem", {
     },
     _text: function(){
       var image = CORE.pencil.set.getBBox();
-      var text_margin = parseInt(CORE.dem.options.top_text["font-size"] / 2)
+      var text_margin = parseInt(CORE.dem.options.top_text["font-size"])
 
       this.slogan = CORE.dem.text.create(CORE.pencil.paper, {
         text: "Кликни меня",
