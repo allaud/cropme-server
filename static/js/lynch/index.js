@@ -11,12 +11,17 @@ CORE("lynch", {
       background: "#F7F4DD",
       position: "absolute"
     },
+    image_options: {
+      opacity: "0.8",
+      position: "absolute"
+    },
     init: function(){
       this._init_events();
     },
-    precreate: function(event){
-      this.contour = $("<div>Изменить текст</div>");
-      this.contour.css(this.options);
+    precreate: function(event, contour, image){
+      this.image = !!image;
+      this.contour = contour ? $(contour) : $("<div>Изменить текст</div>");
+      this.contour.css(image ? this.image_options : this.options);
       this.contour.appendTo("body");
       this.tracking = true;
       this._track_mouse(event);
@@ -43,8 +48,9 @@ CORE("lynch", {
       $(document).on("click", function(event){
         if(self.tracking){
           self.tracking = false;
+          var signal = self.image ? "image:new" : "block:new";
+          CORE.trigger(signal, [null, event.pageX, event.pageY, self.contour]);
           self.contour.remove();
-          CORE.trigger("block:new", [null, event.pageX, event.pageY]);
         }
       });
     }

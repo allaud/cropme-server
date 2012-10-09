@@ -37,6 +37,15 @@ CORE("pencil.controls", {
       CORE.lynch.precreate(event);
       event.stopPropagation();
     },
+    toggle_troll: function(layout, event){
+      var img = $(layout).find("img").clone();
+      if(img.attr("data-img")){
+        img.attr("src", img.attr("data-img"));
+      }
+      CORE.lynch.precreate(event, img, true);
+      $(layout).parents('.open').removeClass('open');
+      event.stopPropagation();
+    },
     revert: function(){
       var last = CORE.pencil.actions.pop();
       if(last){
@@ -85,6 +94,9 @@ CORE("pencil.controls", {
       });
       this.panel.find('.lynch').on('click', function(event){
         self.toggle_lynch(this, event);
+      });
+      this.panel.find('.troll').on('click', function(event){
+        self.toggle_troll(this, event);
       });
       this.panel.find('.btn-primary').on('click', function(){
         self._save();

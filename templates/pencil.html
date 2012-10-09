@@ -20,6 +20,7 @@
 <script type="text/javascript" src="/static/js/dem/position.js"></script>
 <script type="text/javascript" src="/static/js/lynch/index.js"></script>
 <script type="text/javascript" src="/static/js/lynch/block.js?v=2"></script>
+<script type="text/javascript" src="/static/js/troll/block.js"></script>
 <script type="text/javascript" src="/static/js/widgets/ie.js"></script>
 {% endblock %}
 
@@ -55,8 +56,29 @@
             <li><a tabindex="-1" href="#"><div class="h6px"></div></a></li>
           </ul>          
         </li>
+
         <li class="dem"><a><div class="bigicon-dem"></div></a></li>
         <li class="lynch"><a><div class="bigicon-lynch"></div></a></li>
+
+        <li class="dropdown">
+          <a href="" data-toggle="dropdown"><div class="bigicon-troll"></div></a>
+
+          <ul class="dropdown-menu width-selector" role="menu" aria-labelledby="dLabel">
+            <li><a tabindex="-1" href="#"><div class="troll">
+              <img data-img="/static/img/troll/_angry-y-u-no.png" src="/static/img/troll/angry-y-u-no.png">
+            </div></a></li>
+            <li><a tabindex="-1" href="#"><div class="troll">
+              <img src="/static/img/troll/fuck-that-bitch-yao-ming.png">
+            </div></a></li>
+            <li><a tabindex="-1" href="#"><div class="troll">
+              <img src="/static/img/troll/misc-female-seriously.png">
+            </div></a></li>
+            <li><a tabindex="-1" href="#"><div class="troll">
+              <img src="/static/img/troll/misc-nerd.png">
+            </div></a></li>
+          </ul>                    
+        </li>
+
         <li class="divider-vertical"></li>
         <li class="dropdown">
           <a class="colored" data-toggle="dropdown" href="">
