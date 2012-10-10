@@ -25,7 +25,7 @@ CORE("troll.block", {
       var control_width = control_height = this._settings.width;
       var count = this._settings.controls.length;
       var margin = this._settings.margin;
-      y = y + height - control_width;
+      y = y + height;
       x = x + width - count * (control_width + margin);
       this.controls = CORE.pencil.paper.set();
       _.each(this._settings.controls, function(control){
@@ -47,12 +47,13 @@ CORE("troll.block", {
       move = function (dx, dy) {
         var x = dx - this.odx;
         var y = dy - this.ody;
-        self.set.transform("...T" + x + "," + y);
+        self.image.transform("...T" + x + "," + y);
         this.odx = dx;
         this.ody = dy;
       },
       up = function () {
           self.set.animate({"fill-opacity": 1}, 500);
+          self._align_controls();
       };
       this.image.drag(move, start, up);
     },
@@ -61,7 +62,7 @@ CORE("troll.block", {
       var box = this.image.getBBox();
       var controls_box = this.controls.getBBox();
       var x = box.x2 - controls_box.width;
-      var y = box.y2 - controls_box.height;
+      var y = box.y2;
       var control_width = control_height = this._settings.width;
       var margin = this._settings.margin;
       _.each(this._settings.controls, function(control){

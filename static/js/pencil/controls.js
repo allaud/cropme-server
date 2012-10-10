@@ -38,7 +38,7 @@ CORE("pencil.controls", {
       event.stopPropagation();
     },
     toggle_troll: function(layout, event){
-      var img = $(layout).find("img").clone();
+      var img = $(layout).clone();
       if(img.attr("data-img")){
         img.attr("src", img.attr("data-img"));
       }
@@ -95,7 +95,7 @@ CORE("pencil.controls", {
       this.panel.find('.lynch').on('click', function(event){
         self.toggle_lynch(this, event);
       });
-      this.panel.find('.troll').on('click', function(event){
+      this.panel.find('.troll img').on('click', function(event){
         self.toggle_troll(this, event);
       });
       this.panel.find('.btn-primary').on('click', function(){
