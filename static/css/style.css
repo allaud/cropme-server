@@ -58,7 +58,8 @@
 .rage-menu li:first-child{display: table;}
 .rage-menu li .nav{margin-bottom: 5px;}
 .rage-menu .nav li a:hover{color: #fff; text-shadow:none;}
-.rage-menu .nav li a:focus{color: #fff;text-shadow:none;}
+.rage-menu .nav .active a{color: #fff;text-shadow:none;}
+.rage-menu .nav .active a:hover{color: #fff;text-shadow:none;}
 .rage-menu .nav li a{padding: 7px; font-size: 13px; margin: 0;}
 .faces ul{display: table;}
 
