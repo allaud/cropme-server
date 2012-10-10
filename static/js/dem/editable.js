@@ -44,7 +44,8 @@ CORE("dem", {
           left: abs.x,
           width: box.width,
           height: box.height,
-          background: "#ccc"
+          background: "#ccc",
+          overflow: "hidden"
         };
 
         var attrs = _.extend({}, font_attrs, textarea_attrs);

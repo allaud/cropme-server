@@ -181,6 +181,7 @@ CORE("lynch.block", {
         var y = event.clientY - offset.top;
         var box = _.clone(self.rect.getBBox());
         var cling = 30;
+        var timeout = 0;
 
         box.x = box.x - cling;
         box.y = box.y - cling;
@@ -191,6 +192,10 @@ CORE("lynch.block", {
           var center = self._get_center();
           self.tentacle.show();
           self._draw_tentacle(x, y, center.sx, center.sy, self.tentacle, self.options.spirit_tentacle);
+          clearTimeout(timeout);
+          timeout = setTimeout(function(){
+            self.tentacle.hide();
+          }, 1000);
         } else {
           self.tentacle.hide();
         }

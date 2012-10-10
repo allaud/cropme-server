@@ -104,7 +104,8 @@ CORE("dem.text", {
         height: box.height,
         "line-height": this.options.view["font-size"] + "px",
         resize: "none",
-        background: "#ccc"
+        background: "#ccc",
+        overflow: "hidden"
       };
     }
   };

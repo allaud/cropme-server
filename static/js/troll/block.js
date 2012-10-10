@@ -14,10 +14,11 @@ CORE("troll.block", {
     _settings: {
       width: 12,
       margin: 4,
-      controls: ["rotate", "resize", "mirror"],
+      controls: ["rotate", "resize", "mirror", "remove"],
       rotate: "/static/img/pencil/controls/rotate.png",
       resize: "/static/img/pencil/controls/resize.png",
-      mirror: "/static/img/pencil/controls/mirror.png"
+      mirror: "/static/img/pencil/controls/mirror.png",
+      remove: "/static/img/pencil/controls/remove.png",
     },
     _create_controls: function(x, y, width, height){
       var self = this;
@@ -55,6 +56,22 @@ CORE("troll.block", {
       };
       this.image.drag(move, start, up);
     },
+    _align_controls: function(){
+      var self = this;
+      var box = this.image.getBBox();
+      var controls_box = this.controls.getBBox();
+      var x = box.x2 - controls_box.width;
+      var y = box.y2 - controls_box.height;
+      var control_width = control_height = this._settings.width;
+      var margin = this._settings.margin;
+      _.each(this._settings.controls, function(control){
+        self[control].attr({
+          x: x,
+          y: y
+        });
+        x += (control_width + margin);
+      });
+    },
     _rotatable: function(){
       var self = this;
       var start = function () {
@@ -83,16 +100,11 @@ CORE("troll.block", {
         var y = dy - this.ody;
         var box = self.image.getBBox();
         self.image.transform("...s" + (1 + (y/10)));
-        /*
-        self.image.attr({
-          width: box.width + x,
-          height: box.height + y
-        });
-        */ 
         this.odx = dx;
         this.ody = dy;
       },
       up = function () {
+        self._align_controls();
       };
       this.resize.drag(move, start, up);
     },
@@ -114,6 +126,10 @@ CORE("troll.block", {
           transform: "...s1-1r180"
         });
       });
+      this.remove.click(function(){
+        self.set.remove();
+      });
+
       this._rotatable();
       this._resizable();
     }
