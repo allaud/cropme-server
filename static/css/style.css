@@ -61,7 +61,9 @@
 .rage-menu .nav .active a{color: #fff;text-shadow:none;}
 .rage-menu .nav .active a:hover{color: #fff;text-shadow:none;}
 .rage-menu .nav li a{padding: 5px 7px; font-size: 13px; margin: 1px;}
-.faces ul{display: table;}
+.faces{text-align: left;}
+.faces img {display: inline-block;border: 1px solid #fff; border-radius: 4px;}
+.faces img:hover{cursor:pointer;border: 1px solid #0081c2; border-radius: 4px;}
 
 .panel{position: fixed;z-index:1;right: 5px;top: 5px;background: #999;padding: 4px;border-radius: 3px;}
 .panel .btn{padding: 3px 2px 4px 5px; display: block; margin: 3px 0 0 0;}
