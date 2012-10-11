@@ -44,6 +44,7 @@ CORE("pencil.controls", {
       }
       CORE.lynch.precreate(event, img, true);
       $(layout).parents('.open').removeClass('open');
+      $(layout).parents('.dropdown').removeClass('active');
       event.stopPropagation();
     },
     revert: function(){
@@ -73,6 +74,17 @@ CORE("pencil.controls", {
         }
       });
     },
+    _lazy_load: function(layout){
+      var images_wrapper = layout;
+      if(images_wrapper.data("images_loaded")){
+        return;
+      }
+      images_wrapper.find("img").each(function(){
+        var src = $(this).attr("data-src");
+        $(this).attr("src", src);
+      });
+      images_wrapper.data("images_loaded", true);
+    },
     _init_events: function(){
       var self = this;
       this.panel.find('.colorpicker li').on('click', function(){
@@ -95,11 +107,21 @@ CORE("pencil.controls", {
       this.panel.find('.lynch').on('click', function(event){
         self.toggle_lynch(this, event);
       });
+      this.panel.find('.dropdown.troll').on('click', function(event){
+        var images_wrapper = $(this).parent().find(".troll .active");
+        self._lazy_load(images_wrapper);
+      });
       this.panel.find('.troll img').on('click', function(event){
         self.toggle_troll(this, event);
       });
       this.panel.find('.btn-primary').on('click', function(){
         self._save();
+      });
+
+      //lazy load
+      this.panel.find('.rage-menu a[data-toggle="tab"]').click(function(){
+        var selector = $(this).attr("href");
+        self._lazy_load($(selector));
       });
     }
   }
