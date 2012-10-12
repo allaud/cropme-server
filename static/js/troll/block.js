@@ -120,7 +120,7 @@ CORE("troll.block", {
       this.set.mouseout(function(){
         timeout = setTimeout(function(){
           self.controls.hide();  
-        }, 1500);
+        }, 500);
       });
       this.mirror.click(function(){
         self.image.attr({
