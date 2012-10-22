@@ -18,32 +18,36 @@
 -->
 
 <div class="panel">
-  <a href="/pencil{{ request.path }}" class="btn btn-inverse">
+  <a href="/pencil{{ request.path }}" class="btn btn-inverse" title="Редактировать изображение">
     <div class="bigicon-edit"></div>
   </a>
 
-    <a class="dropdown btn btn-inverse" data-toggle="dropdown">
-      <div class="bigicon-share"></div>
-    </a>
-    <ul class="dropdown-menu pull-right social-share" role="menu" aria-labelledby="dLabel">
-      <li>
-        <a href="http://vkontakte.ru/share.php?url=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
-           <div class="bigicon-vk"></div>
-        </a>
-      </li>
-      <li>
-        <a href="http://twitter.com/share" class="btn btn-inverse">
-           <div class="bigicon-twi"></div>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.facebook.com/sharer.php?u=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
-           <div class="bigicon-fb"></div>
-        </a>
-      </li>
-    </ul> 
+  {% if short_id|length > 24 %}
+  <a href="/shorten/{{ short_id }}" class="btn btn-inverse" title="Сократить ссылку">
+    <div class="bigicon-shorten"></div>
+  </a>
+  {% endif %}
 
-  
+  <a class="dropdown btn btn-inverse" data-toggle="dropdown" title="Добавить в социальные сети">
+    <div class="bigicon-share"></div>
+  </a>
+  <ul class="dropdown-menu pull-right social-share" role="menu" aria-labelledby="dLabel">
+    <li>
+      <a href="http://vkontakte.ru/share.php?url=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
+         <div class="bigicon-vk"></div>
+      </a>
+    </li>
+    <li>
+      <a href="http://twitter.com/share" class="btn btn-inverse">
+         <div class="bigicon-twi"></div>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.facebook.com/sharer.php?u=http://{{ request.host }}{{ request.path }}" class="btn btn-inverse">
+         <div class="bigicon-fb"></div>
+      </a>
+    </li>
+  </ul>   
 </div>
 
 

@@ -9,16 +9,17 @@ CORE("troll.block", {
     this._create_controls(x, y, options.width, options.height);
     this._draggable();
     this._init_events();
+    CORE.pencil.actions.push(this);
   };
   Block.prototype = {
     _settings: {
       width: 12,
       margin: 4,
-      controls: ["rotate", "resize", "mirror", "remove"],
+      controls: ["rotate", "resize", "mirror", "erase"],
       rotate: "/static/img/pencil/controls/rotate.png",
       resize: "/static/img/pencil/controls/resize.png",
       mirror: "/static/img/pencil/controls/mirror.png",
-      remove: "/static/img/pencil/controls/remove.png",
+      erase: "/static/img/pencil/controls/remove.png",
     },
     _create_controls: function(x, y, width, height){
       var self = this;
@@ -109,7 +110,9 @@ CORE("troll.block", {
       };
       this.resize.drag(move, start, up);
     },
-
+    remove: function(){
+      this.set.remove();
+    },
     _init_events: function(){
       var self = this;
       var timeout = 0;
@@ -127,8 +130,8 @@ CORE("troll.block", {
           transform: "...s1-1r180"
         });
       });
-      this.remove.click(function(){
-        self.set.remove();
+      this.erase.click(function(){
+        self.remove();
       });
 
       this._rotatable();

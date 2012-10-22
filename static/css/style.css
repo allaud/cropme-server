@@ -1,5 +1,5 @@
 *{margin: 0;padding: 0;}
-#paper{margin:auto;background: #ededed}
+#paper{margin:auto;background: #ededed;box-shadow: 1px 1px 3px #AAAAAA, -1px -1px 3px #AAAAAA;}
 #canvas{display: none;}
 
 .container{text-align:center;width:100%; overflow: hidden;}
@@ -114,6 +114,7 @@
 .bigicon-revert{background: url('../img/pencil/revert.png');width: 24px;height: 25px;}
 .bigicon-edit{background: url('../img/pencil/edit.png');width: 24px;height: 21px;}
 .bigicon-share{background: url('../img/pencil/share.png');width: 22px;height: 22px;}
+.bigicon-shorten{background: url('../img/pencil/shorten.png');width: 24px;height: 24px;}
 .bigicon-vk{background: url('../img/pencil/vkontakte.png');width: 24px;height: 24px;}
 .bigicon-twi{background: url('../img/pencil/twitter.png');width: 24px;height: 24px;}
 .bigicon-fb{background: url('../img/pencil/facebook.png');width: 24px;height: 24px;}

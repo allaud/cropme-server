@@ -18,11 +18,13 @@ CORE("dem", {
       });
       CORE.pencil.overlay.transform("...s1.05,1.05");
       CORE.trigger("dem:switch");
+      CORE.pencil.actions.push(this);
     },
     remove: function(){
       var size = this._get_dimentions();
       this._resize_paper(size);
       CORE.pencil.set.transform("");
+      $(".dem").removeClass("active");
       CORE.trigger("dem:switch");
     },
     _text: function(){

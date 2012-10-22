@@ -58,6 +58,12 @@ CORE("pencil.controls", {
       var paper = $('#paper');
       var self = this;
 
+      if(CORE.pencil.actions.length < 1){
+        var short_id = window.location.pathname.replace("/pencil/", "");
+        window.location = "/" + short_id;
+        return;
+      }
+
       this.panel.find(".ajax").show();
       canvg(canvas, svgfix(paper.html()), {
         renderCallback: function(){

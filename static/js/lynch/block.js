@@ -28,6 +28,7 @@ CORE("lynch.block", {
     this._group();
     this._draggable();
     this._init_events();
+    CORE.pencil.actions.push(this);
   };
   Block.prototype = {
     _default_options: {
@@ -84,6 +85,9 @@ CORE("lynch.block", {
         self._glow();
       }, 10);
       
+    },
+    remove: function(){
+      this.set.remove();
     },
     _glow: function(){
       this.glow = this.back_rect.glow(this.options.glow);
@@ -182,6 +186,10 @@ CORE("lynch.block", {
         var box = _.clone(self.rect.getBBox());
         var cling = 30;
         var timeout = 0;
+
+        if(!box){
+          return;
+        }
 
         box.x = box.x - cling;
         box.y = box.y - cling;
