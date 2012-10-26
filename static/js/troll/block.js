@@ -5,6 +5,7 @@ CORE("troll.block", {
   Block = function(x, y, src, options){
     this.set = CORE.pencil.paper.set();
     this.image = CORE.pencil.paper.image(src, x, y, options.width, options.height);
+    this.image.attr(this._settings.img_attr);
     this.set.push(this.image);
     this._create_controls(x, y, options.width, options.height);
     this._draggable();
@@ -15,11 +16,17 @@ CORE("troll.block", {
     _settings: {
       width: 12,
       margin: 4,
+      img_attr: {
+        cursor: "move"
+      },
+      control_attr: {
+        cursor: "pointer"
+      },
       controls: ["rotate", "resize", "mirror", "erase"],
       rotate: "/static/img/pencil/controls/rotate.png",
       resize: "/static/img/pencil/controls/resize.png",
       mirror: "/static/img/pencil/controls/mirror.png",
-      erase: "/static/img/pencil/controls/remove.png",
+      erase: "/static/img/pencil/controls/remove.png"
     },
     _create_controls: function(x, y, width, height){
       var self = this;
@@ -32,6 +39,7 @@ CORE("troll.block", {
       _.each(this._settings.controls, function(control){
         var src = self._settings[control];
         self[control] = CORE.pencil.paper.image(src, x, y, control_width, control_width);
+        self[control].attr(self._settings.control_attr);
         self.set.push(self[control]);
         self.controls.push(self[control]);
         x += (control_width + margin);
@@ -51,6 +59,7 @@ CORE("troll.block", {
         self.image.transform("...T" + x + "," + y);
         this.odx = dx;
         this.ody = dy;
+        self._align_controls();
       },
       up = function () {
           self.set.animate({"fill-opacity": 1}, 500);
@@ -118,11 +127,12 @@ CORE("troll.block", {
       var timeout = 0;
       this.set.mouseover(function(){
         self.controls.show();
+        self.controls.animate({"fill-opacity": 1}, 10);
         clearTimeout(timeout);
       });
       this.set.mouseout(function(){
         timeout = setTimeout(function(){
-          self.controls.hide();  
+          self.controls.hide();
         }, 500);
       });
       this.mirror.click(function(){
