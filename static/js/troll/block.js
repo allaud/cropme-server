@@ -127,7 +127,6 @@ CORE("troll.block", {
       var timeout = 0;
       this.set.mouseover(function(){
         self.controls.show();
-        self.controls.animate({"fill-opacity": 1}, 10);
         clearTimeout(timeout);
       });
       this.set.mouseout(function(){

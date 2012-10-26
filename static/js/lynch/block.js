@@ -27,8 +27,10 @@ CORE("lynch.block", {
     this._default_text_box = this.text.text.getBBox();
     this._group();
     this._draggable();
-    this._init_events();
+    
     CORE.pencil.actions.push(this);
+    this._create_controls(x, y, this.options.rect.width, this.options.rect.height);
+    this._init_events();
   };
   Block.prototype = {
     _default_options: {
@@ -61,6 +63,33 @@ CORE("lynch.block", {
         width: 10
       }
     },
+    _settings: {
+      width: 12,
+      margin: 4,
+      control_attr: {
+        cursor: "pointer"
+      },      
+      controls: ["erase"],
+      erase: "/static/img/pencil/controls/remove.png"
+    },
+    _create_controls: function(x, y, width, height){
+      var self = this;
+      var control_width = control_height = this._settings.width;
+      var count = this._settings.controls.length;
+      var margin = this._settings.margin;
+      y = y  + height + 3;
+      x = x + width - count * (control_width + margin);
+      this.controls = CORE.pencil.paper.set();
+      _.each(this._settings.controls, function(control){
+        var src = self._settings[control];
+        self[control] = CORE.pencil.paper.image(src, x, y, control_width, control_width);
+        self[control].attr(self._settings.control_attr);
+        self.set.push(self[control]);
+        self.controls.push(self[control]);
+        x += (control_width + margin);
+      });
+      self.controls.hide();
+    },
     _autosize: function(){
       if(!this.text){
         return;
@@ -84,7 +113,7 @@ CORE("lynch.block", {
       _.delay(function(){
         self._glow();
       }, 10);
-      
+      this._align_controls();
     },
     remove: function(){
       this.set.remove();
@@ -173,10 +202,41 @@ CORE("lynch.block", {
         glow.remove();
       });      
     },
+    _align_controls: function(){
+      var self = this;
+      var box = this.rect.getBBox();
+      var controls_box = this.controls.getBBox();
+      var x = box.x2 - controls_box.width;
+      var y = box.y2;
+      var control_width = control_height = this._settings.width;
+      var margin = this._settings.margin;
+      _.each(this._settings.controls, function(control){
+        self[control].attr({
+          x: x,
+          y: y + 3
+        });
+        x += (control_width + margin);
+      });
+    },
     _init_events: function(){
       var self = this;
+      this.erase.click(function(){
+        self.remove();
+      });      
+
       this.rect.hover(function(){
         self.tentacle.hide();
+      });
+
+      var timeout = 0;
+      this.set.mouseover(function(){
+        self.controls.show();
+        clearTimeout(timeout);
+      });
+      this.set.mouseout(function(){
+        timeout = setTimeout(function(){
+          self.controls.hide();
+        }, 500);
       });
 
       CORE.pencil.overlay.mousemove(function(event){
