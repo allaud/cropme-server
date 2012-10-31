@@ -1,5 +1,5 @@
 CORE("pencil.controls", {
-  require: ["pencil", "dem", "lynch"]
+  require: ["pencil", "dem", "macro", "lynch"]
 }, function(CORE){
   var controls = {
     dem_mode: false,

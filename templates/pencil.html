@@ -58,6 +58,7 @@
         </li>
 
         <li class="dem"><a><div class="bigicon-dem"></div></a></li>
+        <li class="macro"><a><div class="bigicon-macro"></div></a></li>
         <li class="lynch"><a><div class="bigicon-lynch"></div></a></li>
 
         <li class="dropdown troll">
@@ -114,7 +115,7 @@
 </div>
 
 <div class="hidden">
-  {% if request.host == 'localhost:5000' or request.host == '192.168.1.6:5000'  %}
+  {% if request.host == 'localhost:5000' or request.host == '192.168.1.2:5000'  %}
   <img id="patient" src="/static/{{ path }}">
   {% else %}
   <img id="patient" src="/{{ path }}">
