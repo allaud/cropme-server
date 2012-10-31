@@ -33,6 +33,15 @@ CORE("pencil.controls", {
       };
       this.dem_mode = !this.dem_mode;
     },
+    toggle_macro: function(layout){
+      $(layout).toggleClass("active");
+      if(!this.dem_mode){
+        CORE.macro.add();
+      } else {
+        CORE.macro.remove();
+      };
+      this.dem_mode = !this.dem_mode;
+    },    
     toggle_lynch: function(layout, event){
       CORE.lynch.precreate(event);
       event.stopPropagation();
