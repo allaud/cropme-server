@@ -18,6 +18,14 @@ def short_to_path(short_id):
     path = redis.get(_key(short_id))
     return path
 
+def view_count(id):
+    key = _key("%s:views" % id)
+    return redis.get(key) or 0
+
+def inc_view_count(id):
+    key = _key("%s:views" % id)
+    redis.incr(key)
+
 def path_to_long(path):
     redis.incr(_key("TOTAL_ID"))
     long_id = md5(path).hexdigest()

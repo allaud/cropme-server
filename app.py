@@ -4,7 +4,7 @@ import Image
 
 from flask import Flask, request, redirect, render_template
 
-from shorten import image_path, path_to_short, path_to_long, short_to_path
+from shorten import image_path, path_to_short, path_to_long, short_to_path, view_count, inc_view_count
 import local
 
 app = Flask(__name__)
@@ -61,7 +61,21 @@ def view(short_id):
     path = short_to_path(short_id)
     if path is None:
         return ""
-    return render_template('view.html', **{'path': path, "short_id": short_id})
+    return render_template('view.html', **{
+        'path': path,
+        'short_id': short_id,
+        'view_count': view_count(short_id),
+    })
+
+@app.route('/compress/<short_id>')
+def compress(short_id):
+    path = '%s/%s' % (dest_dir, short_to_path(short_id), )
+    im = Image.open(path)
+    im = im.resize([int(0.5 * s) for s in im.size], Image.ANTIALIAS)
+    im.save(path, quality=100)
+    inc_view_count(short_id)
+    return 'ok'
+
 
 def _write(path, content):
     f = open(path, 'w')

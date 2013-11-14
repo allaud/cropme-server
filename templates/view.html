@@ -47,7 +47,7 @@
          <div class="bigicon-fb"></div>
       </a>
     </li>
-  </ul>   
+  </ul>
 </div>
 
 
@@ -58,6 +58,17 @@
   <img src="/{{ path }}">
   {% endif %}
 </div>
+
+<script type="text/javascript">
+  var short_id = '{{ short_id }}';
+  var view_count = {{ view_count }};
+  var is_retina = (window.retina || window.devicePixelRatio > 1);
+  if (view_count === 0 && is_retina){
+    $.get('/compress/' + short_id, function() {
+      location.reload(false);
+    });
+  }
+</script>
 
 <a class="about-link" href="/#use">Что такое Crop Me?</a>
 {% endblock %}
