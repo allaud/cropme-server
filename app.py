@@ -43,7 +43,15 @@ def upload(content=None):
     raw_image = decode(image)
     path = image_path(raw_image, local.pref_dir)
     short_id = path_to_long(path)
-    _write('%s/%s' % (dest_dir, path, ), raw_image)
+
+    save_path = '%s/%s' % (dest_dir, path, )
+    _write(save_path, raw_image)
+
+    if request.form.get('retina', None):
+        im = Image.open(save_path)
+        im = im.resize([int(0.5 * s) for s in im.size], Image.ANTIALIAS)
+        im.save(path, quality=100)
+
     return url_mask % short_id
 
 @app.route('/manualupload', methods=['POST'])
