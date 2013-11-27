@@ -1,12 +1,21 @@
 CORE("widgets.download", {
   require: ["utils.os"]
 }, function(CORE){
-  var os = CORE.utils.os.name();
+
+  var retina = (window.devicePixelRatio > 1) ? 'r' : '';
+
+  var os = CORE.utils.os.name() + retina;
+
   var explain = {
     '': '',
     'osx': {
       text: "CropMe.app для OS X (3 mb)",
       link: "/downloads/CropMe.zip",
+      selector: "[href='#macinstall']"
+    },
+    'osxr': {
+      text: "CropMe.app Retina для OS X (3 mb)",
+      link: "/downloads/CropMeR.zip",
       selector: "[href='#macinstall']"
     },
     'win': {
