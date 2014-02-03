@@ -5,6 +5,16 @@
   <p>Создаем папку для скриптов в домашней директории</p>
   <pre >mkdir ~/bin</pre>
 
+  <p>Добавляем папку в переменную окружения $PATH</p>
+
+  <pre>
+  ~/.profile:
+
+  if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+  fi
+  </pre>
+
   <p>Скачиваем скрипт Crop Me</p>
   <pre>wget http://cropme.ru/static/cropme.txt -O ~/bin/cropme </pre>
 
