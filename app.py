@@ -1,6 +1,6 @@
 from base64 import b64decode as decode
 import urllib, urllib2
-import Image
+from PIL import Image
 
 from flask import Flask, request, redirect, render_template
 
