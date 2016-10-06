@@ -9,6 +9,10 @@
 <script type="text/javascript" src="/static/js/widgets/ie.js"></script>
 {% endblock %}
 
+{% block meta %}
+<meta property="og:image" content="http://cropme.ru/{{ path }}" />
+{% endblock %}
+
 {% block content %}
 <!--
 <div class="alert alert-error">
