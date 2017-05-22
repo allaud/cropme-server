@@ -6,6 +6,7 @@ from flask import Flask, request, redirect, render_template
 
 from shorten import image_path, path_to_short, path_to_long, short_to_path, view_count, inc_view_count
 import local
+from crossdomain import crossdomain
 
 app = Flask(__name__)
 
@@ -36,6 +37,7 @@ def shorten(long_id):
     return redirect(url_mask % short_id)
 
 @app.route('/upload', methods=['POST'])
+@crossdomain(origin='*', methods=['POST', 'GET', 'HEAD', 'OPTIONS'])
 def upload(content=None):
     if request.form.get('image', None) is None:
         return "error"
